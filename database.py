@@ -9,18 +9,44 @@ password = os.getenv("PASSWORD")
 user = os.getenv("USER")
 
 mydb = mysql.connector.connect(
-    host=host,
-    user=user,
-    password=password,
-    auth_plugin='caching_sha2_password',
-    database='cedb'
-)
+  host=host,
+  user=user,
+  password=password,
+  auth_plugin='caching_sha2_password',
+  database='cedb'
+  )
 
-mycursor = mydb.cursor()
+def insert_player(data):
+  print(data)
+  mycursor = mydb.cursor()
 
-mycursor.execute("SELECT * FROM players")
+  sql = "INSERT INTO players (playerName,playerCity,ticketPurchasedStore,ticketPurchasedStreet, ticketPurchasedCity, number1,number1SpecialEvent, number1score, number2,number2SpecialEvent, number2score, number3,number3SpecialEvent, number3score, number4,number4SpecialEvent, number4score, bonus, isCashChallenge, isSecondChance, isChampion) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
-myresult = mycursor.fetchall()
+  datum = (data.player_info[0],
+           data.player_info[1],
+           data.player_info[2],
+           data.player_info[3],
+           data.player_info[4],
+           data.turn_1[0],
+           data.turn_1[1],
+           data.turn_1[2],
+           data.turn_2[0],
+           data.turn_2[1],
+           data.turn_2[2],
+           data.turn_3[0],
+           data.turn_3[1],
+           data.turn_3[2],
+           data.turn_4[0],
+           data.turn_4[1],
+           data.turn_4[2],
+           data.bonus,
+           False,
+           False,
+           False)
+  
+  mycursor.execute(sql, datum)
 
-for x in myresult:
-  print(x)
+  mydb.commit()
+
+  mycursor.close()
+  mydb.close()

@@ -713,7 +713,12 @@
             var bonusAmount = parseInt(document.getElementById("bonusamount").value);
 
             var data = {
-                "values":[playerName, playerCity, ticketPurchasedStore, ticketPurchasedStreetName, ticketPurchasedCity,number1,number2,number3,number4, turn1SpecialEvent,turn2specialEvent, turn3SpecialEvent, turn4SpecialEvent,turn1score, turn2score,turn3score, turn4score, bonusAmount]
+                "player_info":[playerName, playerCity, ticketPurchasedStore, ticketPurchasedStreetName, ticketPurchasedCity],
+                "turn_1":[number1, turn1SpecialEvent, turn1score],
+                "turn_2":[number2, turn2specialEvent, turn2score],
+                "turn_3":[number3, turn3SpecialEvent, turn3score],
+                "turn_4":[number4, turn4SpecialEvent, turn4score],
+                'bonus':bonusAmount
             }
             
             fetch("/data", {

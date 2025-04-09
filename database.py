@@ -6,10 +6,11 @@ load_dotenv()
 
 host = os.getenv("HOST")
 password = os.getenv("PASSWORD")
+user = os.getenv("USER")
 
 mydb = mysql.connector.connect(
     host=host,
-    user='root',
+    user=user,
     password=password,
     auth_plugin='caching_sha2_password',
     database='cedb'

@@ -711,6 +711,7 @@
             var turn3score = parseInt(document.getElementById("turn3score").value);
             var turn4score = parseInt(document.getElementById("turn4score").value);
             var bonusAmount = parseInt(document.getElementById("bonusamount").value);
+            var gametotal = parseInt(document.getElementById("scoresummary").value);
 
             var data = {
                 "player_info":[playerName, playerCity, ticketPurchasedStore, ticketPurchasedStreetName, ticketPurchasedCity],
@@ -718,6 +719,7 @@
                 "turn_2":[number2, turn2specialEvent, turn2score],
                 "turn_3":[number3, turn3SpecialEvent, turn3score],
                 "turn_4":[number4, turn4SpecialEvent, turn4score],
+                "game_total":gametotal,
                 'bonus':bonusAmount
             }
             
@@ -726,7 +728,8 @@
                 headers: {'Content-Type': 'application/json'}, 
                 body: JSON.stringify(data)
             }).then(res => {
-                console.log("Request complete! response:", res);
+                //if successful, refresh.  if not, do not refresh
+                console.log("Request complete! response:", res.status);
             });
             
         });

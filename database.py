@@ -25,7 +25,7 @@ def insert_player(data):
     data['turn_4'][1] = None
     data['turn_4'][2] = None
 
-  sql = "INSERT INTO players (playerName,playerCity,ticketPurchasedStore,ticketPurchasedStreet, ticketPurchasedCity, number1,number1SpecialEvent, number1score, number2,number2SpecialEvent, number2score, number3,number3SpecialEvent, number3score, number4,number4SpecialEvent, number4score, bonus, isCashChallenge, isSecondChance, isChampion) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+  sql = "INSERT INTO players (playerName,playerCity,ticketPurchasedStore,ticketPurchasedStreet, ticketPurchasedCity, number1,number1SpecialEvent, number1score, number2,number2SpecialEvent, number2score, number3,number3SpecialEvent, number3score, number4,number4SpecialEvent, number4score, bonus, gameTotal, isCashChallenge, isSecondChance, isChampion) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
   datum = (data["player_info"][0],
            data["player_info"][1],
@@ -45,6 +45,7 @@ def insert_player(data):
            data["turn_4"][1],
            data["turn_4"][2],
            data["bonus"],
+           data["game_total"],
            False,
            False,
            False)
@@ -52,6 +53,3 @@ def insert_player(data):
   mycursor.execute(sql, datum)
 
   mydb.commit()
-
-  #mycursor.close()
-  #mydb.close()

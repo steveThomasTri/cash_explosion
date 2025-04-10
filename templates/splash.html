@@ -13,21 +13,24 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" onsubmit="event.preventDefault();">
       <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Please enter show date.</h1>
       <label for="inputEmail" class="sr-only">Date</label>
       <br>
-      <input type="date" id="inputEmail" class="form-control" placeholder="Date" required autofocus>
+      <input type="date" id="inputDate" class="form-control" placeholder="Date" required autofocus>
       <br>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" id="sendform">Sign in</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2025</p>
     </form>
   </body>
+  <script src="{{url_for('static', filename='controller.js')}}"></script>
   <script>
-    if (localStorage.getItem("gamedate") == null || localStorage.getItem("player#") == null){
-        localStorage.setItem("gamedate", "");
-        localStorage.setItem("player#", 0)
-    }
+    document.getElementById("sendform").addEventListener("click", function() {
+        datee = document.getElementById("inputDate").value
+        localStorage.setItem("date", datee)
+        localStorage.setItem("player#", 1)
+        window.location.replace("/");
+    });
   </script>
 </html>

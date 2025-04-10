@@ -8,6 +8,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/splash')
+def splash():
+    return render_template("splash.html")
+
 @app.route('/about')
 def about():
     return 'This is the about page'

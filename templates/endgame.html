@@ -197,7 +197,8 @@
     
     <script src="{{url_for('static', filename='controller.js')}}"></script>
     <script>
-        var globaldata; 
+        var globaldata;
+        var endGameObj = {"isCashChallenge":[],"isSecondChance":'',"isChampion":""}
         fetch("/endgamedata", {
             method: "POST",
             headers: {'Content-Type': 'application/json'}, 
@@ -225,6 +226,7 @@
             );
             document.getElementsByClassName("playerNameAfterDouble")[0].textContent = data["players"][0][2]
             document.getElementsByClassName("playerNameAfterDouble")[1].textContent = data["players"][1][2]
+            endGameObj["isCashChallenge"].push(data["players"][0][2],data["players"][1][2])
 
             document.getElementsByClassName("gameTotalAfterDouble")[0].textContent = parseInt(data["players"][0][20]) * 2
             document.getElementsByClassName("gameTotalAfterDouble")[1].textContent = parseInt(data["players"][1][20]) * 2
@@ -258,6 +260,28 @@
                 }
 
                 console.log(specialEventValue)
+
+                if (specialEventValue != undefined){
+                    document.getElementsByClassName("hidden")[clicks - 2].classList.remove("hidden")
+                    endGameObj["isSecondChance"] = specialEventValue
+                    document.getElementsByClassName("cashChallengeName")[3].textContent = specialEventValue
+                    document.getElementsByClassName("cashChallengeSelector")[3].value = specialEventValue
+                    clicks++
+                }
+            }
+            else if (clicks == 3){
+                var cc = document.getElementsByName("cashchallenge")
+                var ccvalue;
+
+                for (var sc of cc) {
+                    if (sc.checked) {
+                        ccvalue = sc.value;
+                        break;
+                    }
+                }
+
+                endGameObj["isChampion"] = ccvalue
+                console.log(endGameObj)
             }
         })
         

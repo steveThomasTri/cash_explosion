@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+        <title>Form with Sections</title>
+        <style>
+            .hidden { display: none; }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action active text-center">
+              Results
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 playerNameLeaderboard">1</div>
+                    <div class="col-4 gameTotalLeaderboard">1</div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">2</div>
+                    <div class="col-4 playerNameLeaderboard">1</div>
+                    <div class="col-4 gameTotalLeaderboard">1</div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">3</div>
+                    <div class="col-4 playerNameLeaderboard">1</div>
+                    <div class="col-4 gameTotalLeaderboard">1</div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">4</div>
+                    <div class="col-4 playerNameLeaderboard">1</div>
+                    <div class="col-4 gameTotalLeaderboard">1</div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">5</div>
+                    <div class="col-4 playerNameLeaderboard">1</div>
+                    <div class="col-4 gameTotalLeaderboard">1</div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">6</div>
+                    <div class="col-4 playerNameLeaderboard">1</div>
+                    <div class="col-4 gameTotalLeaderboard">1</div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">7</div>
+                    <div class="col-4 playerNameLeaderboard">1</div>
+                    <div class="col-4 gameTotalLeaderboard">1</div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">8</div>
+                    <div class="col-4 playerNameLeaderboard">1</div>
+                    <div class="col-4 gameTotalLeaderboard">1</div>
+                </div>
+            </button>
+        </div>
+        <div class="list-group hidden">
+            <button type="button" class="list-group-item list-group-item-action active text-center">
+                After Double
+              </button>
+              <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 playerNameAfterDouble">1</div>
+                    <div class="col-4 gameTotalAfterDouble">1</div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">2</div>
+                    <div class="col-4 playerNameAfterDouble">1</div>
+                    <div class="col-4 gameTotalAfterDouble">1</div>
+                </div>
+            </button>
+        </div>
+        <div class="list-group hidden">
+            <button type="button" class="list-group-item list-group-item-action active text-center">
+                Second Chance
+              </button>
+              <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 secondChanceName"></div>
+                    <div class="col-4 ">
+                        <input type="radio" name="secondchance" class="custom-control-input secondChanceSelector" value="">
+                    </div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 secondChanceName"></div>
+                    <div class="col-4 ">
+                        <input type="radio" name="secondchance" class="custom-control-input secondChanceSelector" value="">
+                    </div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 secondChanceName"></div>
+                    <div class="col-4 ">
+                        <input type="radio" name="secondchance" class="custom-control-input secondChanceSelector" value="">
+                    </div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 secondChanceName"></div>
+                    <div class="col-4 ">
+                        <input type="radio" name="secondchance" class="custom-control-input secondChanceSelector" value="">
+                    </div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 secondChanceName"></div>
+                    <div class="col-4 ">
+                        <input type="radio" name="secondchance" class="custom-control-input secondChanceSelector" value="">
+                    </div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 secondChanceName"></div>
+                    <div class="col-4 ">
+                        <input type="radio" name="secondchance" class="custom-control-input secondChanceSelector" value="">
+                    </div>
+                </div>
+            </button>
+        </div>
+        <div class="list-group hidden">
+            <button type="button" class="list-group-item list-group-item-action active text-center">
+                Cash Challenge
+              </button>
+              <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 cashChallengeName">*Champion*</div>
+                    <div class="col-4 ">
+                        <input type="radio" name="cashchallenge" class="custom-control-input cashChallengeSelector" value="">
+                    </div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 cashChallengeName">Champion</div>
+                    <div class="col-4 ">
+                        <input type="radio" name="cashchallenge" class="custom-control-input cashChallengeSelector" value="">
+                    </div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 cashChallengeName">Champion</div>
+                    <div class="col-4 ">
+                        <input type="radio" name="cashchallenge" class="custom-control-input cashChallengeSelector" value="">
+                    </div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 cashChallengeName"></div>
+                    <div class="col-4 ">
+                        <input type="radio" name="cashchallenge" class="custom-control-input cashChallengeSelector" value="">
+                    </div>
+                </div>
+            </button>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="EGButton">Block level button</button>
+    </div>
+    
+    <script src="{{url_for('static', filename='controller.js')}}"></script>
+    <script>
+        var globaldata; 
+        fetch("/endgamedata", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify({"date" : localStorage.getItem("date")})
+        })
+        .then(response => response.json())
+        .then(data => {
+            globaldata = data
+            Array.from(document.getElementsByClassName("playerNameLeaderboard")).forEach(
+                function(element, index, array) {
+                    // do stuff
+                    element.textContent = data["players"][index][2]
+
+                    if (index > 1){
+                        document.getElementsByClassName("secondChanceName")[index - 2].textContent = data["players"][index][2]
+                        document.getElementsByClassName("secondChanceSelector")[index - 2].value = data["players"][index][2]
+                    }
+                }
+            );
+            Array.from(document.getElementsByClassName("gameTotalLeaderboard")).forEach(
+                function(element, index, array) {
+                    // do stuff
+                    element.textContent = data["players"][index][20]
+                }
+            );
+            document.getElementsByClassName("playerNameAfterDouble")[0].textContent = data["players"][0][2]
+            document.getElementsByClassName("playerNameAfterDouble")[1].textContent = data["players"][1][2]
+
+            document.getElementsByClassName("gameTotalAfterDouble")[0].textContent = parseInt(data["players"][0][20]) * 2
+            document.getElementsByClassName("gameTotalAfterDouble")[1].textContent = parseInt(data["players"][1][20]) * 2
+
+            document.getElementsByClassName("cashChallengeName")[1].textContent = data["players"][0][2]
+            document.getElementsByClassName("cashChallengeName")[2].textContent = data["players"][1][2]
+            document.getElementsByClassName("cashChallengeSelector")[1].value = data["players"][0][2]
+            document.getElementsByClassName("cashChallengeSelector")[2].value = data["players"][1][2]
+        });
+
+        var clicks = 0
+        document.getElementById("EGButton").addEventListener('click', function() {
+            if (clicks == 0){
+                document.getElementsByClassName("hidden")[clicks].classList.remove("hidden")
+                clicks++
+            }
+            else if (clicks == 1){
+                document.getElementsByClassName("hidden")[clicks - 1].classList.remove("hidden")
+                clicks++
+            }
+            else if (clicks == 2){
+                var secondchance = document.getElementsByName("secondchance")
+
+                var specialEventValue;
+
+                for (var sc of secondchance) {
+                    if (sc.checked) {
+                        specialEventValue = sc.value;
+                        break;
+                    }
+                }
+
+                console.log(specialEventValue)
+            }
+        })
+        
+    </script>
+</body>
+</html>

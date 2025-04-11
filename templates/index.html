@@ -714,6 +714,7 @@
             var gametotal = parseInt(document.getElementById("scoresummary").value);
 
             var data = {
+                "date":localStorage.getItem("date"),
                 "player_info":[playerName, playerCity, ticketPurchasedStore, ticketPurchasedStreetName, ticketPurchasedCity],
                 "turn_1":[number1, turn1SpecialEvent, turn1score],
                 "turn_2":[number2, turn2specialEvent, turn2score],
@@ -728,8 +729,11 @@
                 headers: {'Content-Type': 'application/json'}, 
                 body: JSON.stringify(data)
             }).then(res => {
-                //if successful, refresh.  if not, do not refresh
-                console.log("Request complete! response:", res.status);
+                if(res.status == 200){
+                    playernumber = localStorage.getItem("player#")
+                    localStorage.setItem("player#", parseInt(playernumber) + 1)
+                    window.location.replace("/");
+                }
             });
             
         });

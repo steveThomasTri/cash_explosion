@@ -25,9 +25,10 @@ def insert_player(data):
     data['turn_4'][1] = None
     data['turn_4'][2] = None
 
-  sql = "INSERT INTO players (playerName,playerCity,ticketPurchasedStore,ticketPurchasedStreet, ticketPurchasedCity, number1,number1SpecialEvent, number1score, number2,number2SpecialEvent, number2score, number3,number3SpecialEvent, number3score, number4,number4SpecialEvent, number4score, bonus, gameTotal, isCashChallenge, isSecondChance, isChampion) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+  sql = "INSERT INTO players (date,playerName,playerCity,ticketPurchasedStore,ticketPurchasedStreet, ticketPurchasedCity, number1,number1SpecialEvent, number1score, number2,number2SpecialEvent, number2score, number3,number3SpecialEvent, number3score, number4,number4SpecialEvent, number4score, bonus, gameTotal, isCashChallenge, isSecondChance, isChampion) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
-  datum = (data["player_info"][0],
+  datum = (data["date"],
+           data["player_info"][0],
            data["player_info"][1],
            data["player_info"][2],
            data["player_info"][3],
@@ -53,3 +54,11 @@ def insert_player(data):
   mycursor.execute(sql, datum)
 
   mydb.commit()
+
+def get_endgame(date):
+  mycursor = mydb.cursor()
+  sql = f"SELECT * FROM players where date= %s ORDER BY gameTotal DESC"
+  addr = (date["date"],)
+  mycursor.execute(sql, addr)
+  myresult = mycursor.fetchall()
+  return myresult

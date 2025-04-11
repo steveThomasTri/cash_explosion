@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 from extractorimagetextcopy import extractor
-from database import insert_player
+from database import insert_player, get_endgame
 
 app = Flask(__name__)
 
@@ -11,6 +11,10 @@ def index():
 @app.route('/splash')
 def splash():
     return render_template("splash.html")
+
+@app.route('/endgame')
+def endgame():
+    return render_template("endgame.html")
 
 @app.route('/about')
 def about():
@@ -29,6 +33,11 @@ def insert_data():
     data = request.json
     insert_player(data)
     return 'This is the about page'
+
+@app.route("/endgamedata", methods=["POST"])
+def end_game_data():
+    data = request.json
+    return jsonify(players = get_endgame(data))
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -15,3 +15,9 @@ if ((date != "") && ((player > 0) && (player <= 8))){
         window.location.replace("/");
     }
 }
+
+if ((date != "") && (player == 9)){
+    if (page != "/endgame"){
+        window.location.replace("/endgame");
+    }
+}

@@ -67,26 +67,58 @@ def update_endgame_results(result):
   values_list = result["isCashChallenge"]  # example list of players
   placeholders = ','.join(['%s'] * len(values_list))
 
-  sql = f"SELECT * FROM players WHERE date = %s AND playerName IN ({placeholders})"
+  sql = f"UPDATE players SET isCashChallenge = 1 WHERE date = %s AND playerName IN ({placeholders})"
   params = [result["date"]] + values_list
 
   mycursor = mydb.cursor()
   mycursor.execute(sql, params)
-  myresult = mycursor.fetchall()
+  mydb.commit()
+  myresult = mycursor.rowcount
   print(myresult)
 
   mycursor = mydb.cursor()
-  sql = f"SELECT * FROM players where date= %s AND playerName=%s"
+  sql = f"UPDATE players SET isSecondChance = 1 where date= %s AND playerName=%s"
   addr = (result["date"],result["isSecondChance"],)
   mycursor.execute(sql, addr)
-  myresult = mycursor.fetchall()
+  mydb.commit()
+  myresult = mycursor.rowcount
   print(myresult)
 
   #champion
   #if new champ, new row goes in champions table
-  #if returning, get id and copy to chanpions table with new date
-  sql = f"SELECT * FROM players where date= %s AND playerName=%s"
-  addr = (result["date"],result["isChampion"],)
-  mycursor.execute(sql, addr)
-  myresult = mycursor.fetchall()
-  print(myresult)
+  #if returning, get id and copy to champions table with new date
+  if result["isChampion"] != "":
+    sql = f"UPDATE players SET isChampion = 1 where date= %s AND playerName=%s"
+    addr = (result["date"],result["isChampion"],)
+    mycursor.execute(sql, addr)
+    mydb.commit()
+    myresult = mycursor.rowcount
+    print(myresult)
+
+    sql = """
+    INSERT INTO champions (date, playerID)
+    VALUES (
+      %s,
+      (SELECT id FROM players WHERE date= %s AND playerName=%s)
+    )
+    """
+
+    params = (result["date"], result["date"], result["isChampion"],)
+    mycursor.execute(sql, params)
+    mydb.commit()
+    myresult = mycursor.rowcount
+    print(myresult)
+  else:
+    sql = """
+    INSERT INTO champions (date, playerID)
+    VALUES (
+      %s,
+      (SELECT playerID FROM champions ORDER BY id DESC LIMIT 1)
+    )
+    """
+    params = (result["date"],)
+    mycursor.execute(sql, params)
+    mydb.commit()
+    myresult = mycursor.rowcount
+    print(myresult)
+  

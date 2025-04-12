@@ -193,6 +193,12 @@
             </button>
         </div>
         <button type="button" class="btn btn-primary btn-lg btn-block" id="EGButton">Block level button</button>
+        <div class="jumbotron hidden" style="background: greenyellow" id="endGameResults">
+            <h1 class="display-4 endGameResults2" id=""></h1>
+            <h1 class="display-4 endGameResults2" id=""></h1>
+            <h1 class="display-4 endGameResults2" id=""></h1>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block hidden" id="submitChanges" disabled>Approve</button>
     </div>
     
     <script src="{{url_for('static', filename='controller.js')}}"></script>
@@ -259,8 +265,6 @@
                     }
                 }
 
-                console.log(specialEventValue)
-
                 if (specialEventValue != undefined){
                     document.getElementsByClassName("hidden")[clicks - 2].classList.remove("hidden")
                     endGameObj["isSecondChance"] = specialEventValue
@@ -280,9 +284,38 @@
                     }
                 }
 
-                endGameObj["isChampion"] = ccvalue
-                console.log(endGameObj)
+                
+                if (ccvalue != undefined){
+                    endGameObj["isChampion"] = ccvalue
+                    const listgroups = document.getElementsByClassName("list-group")
+                    for (let i = 0; i<listgroups.length; i++){
+                        listgroups[i].classList.add("hidden")
+                    }
+                    //show jumbotron
+                    document.getElementById("endGameResults").classList.remove("hidden")
+                    document.getElementsByClassName("endGameResults2")[0].textContent = "Cash Challenge "+endGameObj["isCashChallenge"]
+                    document.getElementsByClassName("endGameResults2")[1].textContent = "Second Chance "+endGameObj["isSecondChance"]
+                    document.getElementsByClassName("endGameResults2")[2].textContent = "Champion "+endGameObj["isChampion"]
+                    //show and enable button
+                    document.getElementById("submitChanges").classList.remove("hidden")
+                    document.getElementById("submitChanges").disabled = false
+                    clicks++
+                }
             }
+        });
+
+        document.getElementById("submitChanges").addEventListener('click', function() {
+            this.disabled = true;
+            endGameObj["date"] = localStorage.getItem("date")
+            fetch("/endgameresults", {
+                method: "POST",
+                headers: {'Content-Type': 'application/json'}, 
+                body: JSON.stringify(endGameObj)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            });
         })
         
     </script>

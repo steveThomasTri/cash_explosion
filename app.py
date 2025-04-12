@@ -39,5 +39,10 @@ def end_game_data():
     data = request.json
     return jsonify(players = get_endgame(data))
 
+@app.route("/endgameresults", methods=["POST"])
+def end_game_results():
+    data = request.json
+    return data
+
 if __name__ == '__main__':
     app.run(debug=True)

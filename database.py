@@ -62,3 +62,31 @@ def get_endgame(date):
   mycursor.execute(sql, addr)
   myresult = mycursor.fetchall()
   return myresult
+
+def update_endgame_results(result):
+  values_list = result["isCashChallenge"]  # example list of players
+  placeholders = ','.join(['%s'] * len(values_list))
+
+  sql = f"SELECT * FROM players WHERE date = %s AND playerName IN ({placeholders})"
+  params = [result["date"]] + values_list
+
+  mycursor = mydb.cursor()
+  mycursor.execute(sql, params)
+  myresult = mycursor.fetchall()
+  print(myresult)
+
+  mycursor = mydb.cursor()
+  sql = f"SELECT * FROM players where date= %s AND playerName=%s"
+  addr = (result["date"],result["isSecondChance"],)
+  mycursor.execute(sql, addr)
+  myresult = mycursor.fetchall()
+  print(myresult)
+
+  #champion
+  #if new champ, new row goes in champions table
+  #if returning, get id and copy to chanpions table with new date
+  sql = f"SELECT * FROM players where date= %s AND playerName=%s"
+  addr = (result["date"],result["isChampion"],)
+  mycursor.execute(sql, addr)
+  myresult = mycursor.fetchall()
+  print(myresult)

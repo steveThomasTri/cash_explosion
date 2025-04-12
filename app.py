@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 from extractorimagetextcopy import extractor
-from database import insert_player, get_endgame
+from database import insert_player, get_endgame, update_endgame_results
 
 app = Flask(__name__)
 
@@ -42,6 +42,7 @@ def end_game_data():
 @app.route("/endgameresults", methods=["POST"])
 def end_game_results():
     data = request.json
+    update_endgame_results(data)
     return data
 
 if __name__ == '__main__':

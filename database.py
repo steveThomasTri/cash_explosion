@@ -57,7 +57,8 @@ def insert_player(data):
 
 def get_endgame(date):
   mycursor = mydb.cursor()
-  sql = f"SELECT * FROM players where date= %s ORDER BY gameTotal DESC"
+  sql = f"SELECT * FROM players where date= %s ORDER BY gameTotal DESC, playerName DESC"
+  #Must resolve for tie breaker
   addr = (date["date"],)
   mycursor.execute(sql, addr)
   myresult = mycursor.fetchall()
@@ -74,7 +75,6 @@ def update_endgame_results(result):
   mycursor.execute(sql, params)
   mydb.commit()
   myresult = mycursor.rowcount
-  print(myresult)
 
   mycursor = mydb.cursor()
   sql = f"UPDATE players SET isSecondChance = 1 where date= %s AND playerName=%s"
@@ -82,7 +82,6 @@ def update_endgame_results(result):
   mycursor.execute(sql, addr)
   mydb.commit()
   myresult = mycursor.rowcount
-  print(myresult)
 
   #champion
   #if new champ, new row goes in champions table
@@ -93,7 +92,6 @@ def update_endgame_results(result):
     mycursor.execute(sql, addr)
     mydb.commit()
     myresult = mycursor.rowcount
-    print(myresult)
 
     sql = """
     INSERT INTO champions (date, playerID)
@@ -107,7 +105,6 @@ def update_endgame_results(result):
     mycursor.execute(sql, params)
     mydb.commit()
     myresult = mycursor.rowcount
-    print(myresult)
   else:
     sql = """
     INSERT INTO champions (date, playerID)
@@ -134,18 +131,18 @@ def verify2(date):
   mycursor.execute(sql, addr)
   myresult = mycursor.fetchall()
   secondchance = len(myresult)
-  print(cashchallenge, secondchance)
   return cashchallenge, secondchance
 
 def totalwinnings(date):
   mycursor = mydb.cursor()
-  sql = f"SELECT * FROM players where date= %s AND isChampion = 1"
+  sql = f"SELECT isChampion, isSecondChance FROM players where date= %s AND isChampion = 1"
   addr = (date["date"],)
   mycursor.execute(sql, addr)
-  myresult = mycursor.fetchall()
-  champions = len(myresult)
+  myresult = mycursor.fetchone()
+  print(myresult)
+  #results will be (1,0) (1,1) or None
 
-  if champions == 1:
+  if myresult[0] == 1 and myresult[1] == 0:
     mycursor = mydb.cursor()
     sql = """
     SELECT
@@ -162,8 +159,32 @@ def totalwinnings(date):
     """
     addr = (date["date"],date["date"],date["date"],date["date"],)
     mycursor.execute(sql, addr)
-    myresult = mycursor.fetchone()
-    return myresult
+    myresults = mycursor.fetchone()
+    return myresults
+  elif myresult[0] == 1 and myresult[1] == 1:
+    mycursor = mydb.cursor()
+    sql = """
+    -- Case when the Second Chance player is the champion
+    SELECT
+    -- all players bonus totals
+    (select sum(bonus) from players where date= %s group by date) +
+    -- all players game totals
+    (select sum(gameTotal) from players where date= %s group by date) +
+    -- the two players with cash challenge
+    (select sum(gameTotal) from players where date= %s AND isCashChallenge = 1 group by date) +
+    -- including second chance
+    (5000) +
+    (select sum(
+    CASE
+      when gameTotal + gameTotal >= 40000 THEN 75000 - gameTotal - gameTotal
+        -- always happens
+        else 50000 - gameTotal - 5000
+    END) from players WHERE date= %s AND isChampion = 1 and isSecondChance = 1) AS total_sum
+    """
+    addr = (date["date"],date["date"],date["date"],date["date"],)
+    mycursor.execute(sql, addr)
+    myresults = mycursor.fetchone()
+    return myresults
 
   
   

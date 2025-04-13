@@ -140,8 +140,35 @@ def totalwinnings(date):
   myresult = mycursor.fetchone()
   print(myresult)
   #results will be (1,0) (1,1) or None
-
-  if myresult[0] == 1 and myresult[1] == 0:
+  #if returning champioon wins
+  if myresult == None:
+    print("OK")
+    mycursor = mydb.cursor()
+    sql = """
+    SELECT
+    (select sum(bonus) from players where date= %s group by date) +
+    (select sum(gameTotal) from players where date= %s group by date) +
+    (select sum(gameTotal) from players where date= %s AND isCashChallenge = 1 group by date) +
+    (5000) +
+    (SELECT 
+      CASE 
+        WHEN cnt = 2 THEN 50000
+        WHEN cnt > 2 THEN 100000
+        ELSE 0
+      END
+    FROM (
+      SELECT COUNT(*) AS cnt
+      FROM champions
+      WHERE playerID = (
+        SELECT playerID FROM champions ORDER BY id DESC LIMIT 1
+      )
+    ) AS total_sum)
+    """
+    addr = (date["date"],date["date"],date["date"],)
+    mycursor.execute(sql, addr)
+    myresults = mycursor.fetchone()
+    return myresults
+  elif myresult[0] == 1 and myresult[1] == 0:
     mycursor = mydb.cursor()
     sql = """
     SELECT

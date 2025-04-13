@@ -20,14 +20,6 @@ def endgame():
 def endgameresult():
     return render_template("endgameresult.html")
 
-@app.route('/about')
-def about():
-    return 'This is the about page'
-
-@app.route('/profile/<username>')
-def profile(username):
-    return f'This is the profile page for {username}'
-
 @app.route('/getname', methods=['GET'])
 def getName():
     return jsonify(message=extractor())

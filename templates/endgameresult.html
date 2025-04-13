@@ -26,6 +26,7 @@
             window.location.replace("/splash")
 
         }
+
         if ((localStorage.getItem("player#") == 9) && (localStorage.getItem("date") != "")){
             
             fetch("/verify", {
@@ -57,8 +58,11 @@
                         btn.disabled = false; // set to false if you want it enabled
                         btn.textContent = "Approve";
 
+                        btn.addEventListener("click", handleApproveClick);
+
                         // Append it to a container in your HTML, like a div with id="buttonContainer"
                         document.getElementsByClassName("container")[0].appendChild(btn);
+
                     });
                 }
                 else{

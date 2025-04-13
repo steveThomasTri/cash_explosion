@@ -108,10 +108,9 @@ def update_endgame_results(result):
   else:
     sql = """
     INSERT INTO champions (date, playerID)
-    VALUES (
-      %s,
-      (SELECT playerID FROM champions ORDER BY id DESC LIMIT 1)
-    )
+    SELECT %s, t.playerID FROM (
+      SELECT playerID FROM champions ORDER BY id DESC LIMIT 1
+    ) AS t
     """
     params = (result["date"],)
     mycursor.execute(sql, params)

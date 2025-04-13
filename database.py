@@ -121,4 +121,49 @@ def update_endgame_results(result):
     mydb.commit()
     myresult = mycursor.rowcount
     print(myresult)
+
+def verify2(date):
+  mycursor = mydb.cursor()
+  sql = f"SELECT * FROM players where date= %s AND isCashChallenge = 1"
+  addr = (date["date"],)
+  mycursor.execute(sql, addr)
+  myresult = mycursor.fetchall()
+  cashchallenge = len(myresult)
+  sql = f"SELECT * FROM players where date= %s AND isSecondChance = 1"
+  addr = (date["date"],)
+  mycursor.execute(sql, addr)
+  myresult = mycursor.fetchall()
+  secondchance = len(myresult)
+  print(cashchallenge, secondchance)
+  return cashchallenge, secondchance
+
+def totalwinnings(date):
+  mycursor = mydb.cursor()
+  sql = f"SELECT * FROM players where date= %s AND isChampion = 1"
+  addr = (date["date"],)
+  mycursor.execute(sql, addr)
+  myresult = mycursor.fetchall()
+  champions = len(myresult)
+
+  if champions == 1:
+    mycursor = mydb.cursor()
+    sql = """
+    SELECT
+    (select sum(bonus) from players where date= %s group by date) +
+    (select sum(gameTotal) from players where date= %s group by date) +
+    (select sum(gameTotal) from players where date= %s AND isCashChallenge = 1 group by date) +
+    (5000) +
+    (select sum(
+      CASE
+        when gameTotal + gameTotal >= 40000 THEN 75000 - gameTotal - gameTotal
+        else 50000 - gameTotal - gameTotal
+      END) 
+    FROM players WHERE date= %s AND isChampion = 1) AS total_sum
+    """
+    addr = (date["date"],date["date"],date["date"],date["date"],)
+    mycursor.execute(sql, addr)
+    myresult = mycursor.fetchone()
+    return myresult
+
+  
   

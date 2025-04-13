@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 from extractorimagetextcopy import extractor
-from database import insert_player, get_endgame, update_endgame_results
+from database import insert_player, get_endgame, update_endgame_results, verify2, totalwinnings
 
 app = Flask(__name__)
 
@@ -15,6 +15,10 @@ def splash():
 @app.route('/endgame')
 def endgame():
     return render_template("endgame.html")
+
+@app.route('/endgameresult')
+def endgameresult():
+    return render_template("endgameresult.html")
 
 @app.route('/about')
 def about():
@@ -43,7 +47,15 @@ def end_game_data():
 def end_game_results():
     data = request.json
     update_endgame_results(data)
-    return data
+    return "Proceed with Care"
+
+@app.route('/verify', methods=['POST'])
+def verify():
+    return jsonify(v = verify2(request.json))
+
+@app.route('/totalwinnings', methods=['POST'])
+def totalwinning():
+    return jsonify(total = totalwinnings(request.json))
 
 if __name__ == '__main__':
     app.run(debug=True)

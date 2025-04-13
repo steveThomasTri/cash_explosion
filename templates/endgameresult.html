@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+        <title>Form with Sections</title>
+        <style>
+            .hidden { display: none; }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+            <h3>Total won on today's show</h3>
+            <h1 class="display-1" id="dollaramount">Will be redirected...</h1>
+        </div>
+    </div>
+    
+    <!-- <script src="{{url_for('static', filename='controller.js')}}"></script> -->
+    <script>
+        function handleApproveClick(){
+            localStorage.removeItem("player#")
+            localStorage.removeItem("date")
+            window.location.replace("/splash")
+
+        }
+        if ((localStorage.getItem("player#") == 9) && (localStorage.getItem("date") != "")){
+            
+            fetch("/verify", {
+                method: "POST",
+                headers: {'Content-Type': 'application/json'}, 
+                body: JSON.stringify({"date" : localStorage.getItem("date")})
+            })
+            .then(response => response.json())
+            .then(data => {
+                //we got the array
+                if ((data["v"][0] == 2) && (data["v"][1] == 1)){
+                    console.log("PROCEED")
+                    //final logic to display total
+                    fetch("/totalwinnings", {
+                        method: "POST",
+                        headers: {'Content-Type': 'application/json'}, 
+                        body: JSON.stringify({"date" : localStorage.getItem("date")})
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        document.getElementById("dollaramount").textContent = "$" + parseInt(data["total"][0]).toLocaleString('en-US')
+
+                        const btn = document.createElement("button");
+
+                        btn.type = "button";
+                        btn.className = "btn btn-primary btn-lg btn-block";
+                        btn.id = "submitChanges";
+                        btn.disabled = false; // set to false if you want it enabled
+                        btn.textContent = "Approve";
+
+                        // Append it to a container in your HTML, like a div with id="buttonContainer"
+                        document.getElementsByClassName("container")[0].appendChild(btn);
+                    });
+                }
+                else{
+                    window.location.replace("/endgame")
+                }
+            });
+        }
+        else{
+            window.location.replace("/endgame");
+        }
+    </script>
+</body>
+</html>

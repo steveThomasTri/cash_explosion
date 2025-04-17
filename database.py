@@ -212,5 +212,32 @@ def totalwinnings(date):
     myresults = mycursor.fetchone()
     return myresults
 
-  
-  
+def cities():
+  mycursor = mydb.cursor()
+  sql = """
+  SELECT city, lon, lat, county, count(ticketPurchasedCity), 
+  sum(
+  CASE
+    when (isCashChallenge = 1 and isChampion = 0) then gameTotal + gameTotal
+      when (isSecondChance = 1 and isChampion = 0) then gameTotal + 5000
+      when (isChampion = 1) then 
+      CASE
+        when coalesce(champ_count.champion_count, 0) = 2 then 100000
+              when champ_count.champion_count = 1 then 50000
+          END
+      else gameTotal
+  END) as GT
+  from cities 
+  INNER JOIN players 
+  ON cities.city = players.ticketPurchasedCity
+  LEFT JOIN 
+      (
+          SELECT playerID, COUNT(*) AS champion_count
+          FROM champions
+          GROUP BY playerID
+      ) AS champ_count ON champ_count.playerID = players.id
+  GROUP BY cities.city, cities.lon, cities.lat, cities.county;  
+"""
+  mycursor.execute(sql)
+  myresult = mycursor.fetchall()
+  return myresult

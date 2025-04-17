@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 from extractorimagetextcopy import extractor
-from database import insert_player, get_endgame, update_endgame_results, verify2, totalwinnings
+from database import insert_player, get_endgame, update_endgame_results, verify2, totalwinnings, cities
+from geopyexample import get_cities
 
 app = Flask(__name__)
 
@@ -19,6 +20,10 @@ def endgame():
 @app.route('/endgameresult')
 def endgameresult():
     return render_template("endgameresult.html")
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
 
 @app.route('/getname', methods=['GET'])
 def getName():
@@ -48,6 +53,10 @@ def verify():
 @app.route('/totalwinnings', methods=['POST'])
 def totalwinning():
     return jsonify(total = totalwinnings(request.json))
+
+@app.route('/citydata')
+def citydata():
+    return jsonify(cities())
 
 if __name__ == '__main__':
     app.run(debug=True)

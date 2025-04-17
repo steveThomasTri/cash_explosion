@@ -25,6 +25,10 @@ def endgameresult():
 def dashboard():
     return render_template("dashboard.html")
 
+@app.route("/testdashboard")
+def testdashboard():
+    return render_template("testdashboard.html")
+
 @app.route('/getname', methods=['GET'])
 def getName():
     return jsonify(message=extractor())

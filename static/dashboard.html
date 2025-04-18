@@ -52,41 +52,6 @@
       .attr("d", path);
 
     const tooltip = d3.select("#tooltip");
-    /*
-    svg.selectAll("circle")
-    .data(ok) // your array of cities
-    .enter()
-    .append("circle")
-    .attr("class", "marker")
-    .attr("cx", d => projection(d.coordinates)[0])
-    .attr("cy", d => projection(d.coordinates)[1])
-    .attr("r", 5)
-    .attr("fill", "red")
-    .style("cursor", "pointer")
-    .on("click", function(event, d) {
-        const [x, y] = projection(d.coordinates);
-
-        // Check if tooltip is already visible for this city
-        const currentCity = tooltip.attr("data-city");
-        const isSameCity = currentCity === d.city;
-
-        if (isSameCity && tooltip.style("display") === "block") {
-        // Hide tooltip
-        tooltip.style("display", "none").attr("data-city", "");
-        } else {
-        // Show tooltip
-        tooltip
-            .style("left", `${x + 10}px`)
-            .style("top", `${y}px`)
-            .style("display", "block")
-            .attr("data-city", d.city)
-            .html(`<strong>${d.city}</strong><br/>Lat: ${d.coordinates[1].toFixed(4)}<br/>Lon: ${d.coordinates[0].toFixed(4)}`);
-        }
-
-        // Stop event from bubbling so clicking svg doesn’t immediately close it
-        event.stopPropagation();
-    });
-    */
 
     // Optional: Click anywhere else to hide the tooltip
 

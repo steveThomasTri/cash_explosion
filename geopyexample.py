@@ -3,7 +3,7 @@ import time
 from geopy.exc import GeocoderTimedOut
 from database import insert_player, get_endgame, update_endgame_results, verify2, totalwinnings, cities
 
-"""
+
 import mysql.connector
 import os
 from dotenv import load_dotenv
@@ -21,6 +21,8 @@ mydb = mysql.connector.connect(
   auth_plugin='caching_sha2_password',
   database='cedb'
   )
+
+"""
 mycursor = mydb.cursor()
 sql = f"SELECT DISTINCT playerCity from players UNION SELECT DISTINCT ticketPurchasedCity from players"
 mycursor.execute(sql)
@@ -83,6 +85,40 @@ for city in myresult:
 #print(f"Address: {location.address}")
 #print(f"Latitude: {location.latitude}, Longitude: {location.longitude}")
 """
+"""
+import json
 
-def get_cities(allcities):
-    citydata = []
+mycursor = mydb.cursor()
+sql = f"SELECT county from cities"
+mycursor.execute(sql)
+myresult = mycursor.fetchall()
+print(myresult)
+
+
+
+
+# Open and read the JSON file
+with open('county.json', 'r') as file:
+    data = json.load(file)
+
+    for result in myresult:
+        #print(result[0])
+        county = result[0].split(" ")
+        firstname = county[0]
+
+        for feature in data["features"]:
+            if (feature["properties"]["STATEFP"] == "39") and (feature["properties"]["NAME"] == firstname):
+                #print(feature["properties"]["GEOID"], firstname)
+                mycursor = mydb.cursor()
+                sql = f"UPDATE cities SET code=%s where county=%s"
+                addr = (feature["properties"]["GEOID"],result[0],)
+                mycursor.execute(sql, addr)
+                mydb.commit()
+                break
+"""
+'''
+mycursor = mydb.cursor()
+sql = f"UPDATE cities SET code=26115 where city='TEMPERANCE, MI'"
+mycursor.execute(sql)
+mydb.commit()
+'''

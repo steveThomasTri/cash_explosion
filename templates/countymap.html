@@ -78,6 +78,9 @@
       const monroeCounty = counties.find(d => d.id === "26115");
 
       const allCounties = [...ohioCounties, monroeCounty];
+      allCounties.forEach(data => {
+        console.log(data.id, data.properties.name)
+      })
 
       svg.selectAll("path.county")
         .data(allCounties)
@@ -94,7 +97,9 @@
       });
 
       function updateMap() {
+        //get dataset from array
         const dataset = datasets[currentDatasetIndex];
+        //get all values from dataset
         const data = dataset.values;
 
         // Get min/max for color scale
@@ -104,7 +109,7 @@
 
         // Update label
         d3.select("#datasetLabel").text(`Dataset: ${dataset.name}`);
-
+        //path.county is from the svg
         svg.selectAll("path.county")
           .transition()
           .duration(750)

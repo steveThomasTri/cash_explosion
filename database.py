@@ -251,5 +251,5 @@ def county():
   countyData = {}
   for result in myresult:
     #print(result)
-    countyData[str(result[1])] = {"contestantcount":result[0],"averagebase":result[3]}
+    countyData[str(result[1])] = {"contestantcount":result[0],"averagebase":result[3], "name":result[2]}
   return countyData

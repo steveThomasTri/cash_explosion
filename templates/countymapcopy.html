@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ohio County Map + Data Cycling</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <style>
+    svg {
+      width: 100%;
+      height: 900px;
+    }
+    path {
+      stroke: #333;
+      stroke-width: 0.5px;
+    }
+    #datasetLabel {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .tooltip {
+      position: absolute;
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      pointer-events: none;
+      font-size: 14px;
+      visibility: hidden;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <button id="cycleBtn">Next Dataset</button>
+  <div id="datasetLabel"></div>
+  <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet"></svg>
+  <div class="tooltip" id="tooltip"></div>
+  <script>
+    const svg = d3.select("svg");
+    const width = +svg.attr("width");
+    const height = +svg.attr("height");
+
+    const projection = d3.geoConicConformal()
+      .parallels([38.5, 41])
+      .rotate([82.5, 0])
+      .center([0, 40.2])
+      .scale(7500)
+
+    const path = d3.geoPath().projection(projection);
+
+    let datasets = ["contestantcount","averagebase","averagewinnings"]
+    let currentDatasetIndex = 0
+    let countyData = {} //holding flask data
+
+    const colorScale = d3.scaleSequential()
+      .domain([0, 100]) // adjust domain based on your data
+      .interpolator(d3.interpolateBlues);
+
+      Promise.all([
+        d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json"),
+        d3.json("/countydata")
+      ]).then(([us, data]) => {
+        countyData = data;
+        console.log(countyData)
+
+        const counties = topojson.feature(us, us.objects.counties).features;
+        const ohioCounties = counties.filter(d => d.id.startsWith("39"));
+        const monroeCounty = counties.find(d => d.id === "26115");
+
+        const allCounties = [...ohioCounties, monroeCounty];
+
+        svg.selectAll("path.county")
+          .data(allCounties)
+          .enter()
+          .append("path")
+          .attr("class", "county")
+          .attr("d", path)
+          .attr("fill", "white")
+          .attr("stroke", "#999");
+
+        updateMap(); // initial render
+
+        d3.select("#cycleBtn").on("click", () => {
+          currentDatasetIndex = (currentDatasetIndex + 1) % datasets.length;
+          updateMap()
+        });
+
+      });
+
+      function updateMap() {
+        //get dataset from array
+        const key = datasets[currentDatasetIndex];
+        //get all values from dataset
+        d3.select("#datasetLabel").text(`Showing: ${key}`);
+        //path.county is from the svg
+
+
+        //----------
+        const values = Object.values(countyData)
+          .map(d => d[key])
+          .filter(v => v !== undefined && v !== null)
+
+          const minVal = d3.min(values);
+          const maxVal = d3.max(values);
+
+          const colorScale = d3.scaleSequential()
+            .domain([minVal, maxVal])
+            .interpolator(d3.interpolateBlues); // you can swap this out too if you want different color schemes
+        //----------
+        svg.selectAll("path.county")
+          .transition()
+          .duration(750)
+          .attr("fill", function(d) {
+            const countyId = d.id;
+            const data = countyData[countyId];
+            if (data && data[key] !== undefined) {
+              return colorScale(data[key]);
+            } else {
+              return "#ccc"; // fallback for missing data
+            }
+          });
+
+          const tooltip = d3.select("#tooltip");
+
+          svg.selectAll("path.county")
+            .on("mouseover", function(event, d) {
+              const countyId = d.id;
+              const data = countyData[countyId];
+              const key = datasets[currentDatasetIndex];
+
+              let value = data && data[key] !== undefined ? data[key] : "No data";
+
+              tooltip
+                .style("visibility", "visible")
+                .html(`<strong>County ID:</strong> ${countyId}<br><strong>${key}:</strong> ${value}`);
+              
+              d3.select(this)
+                .attr("stroke", "#333")
+                .attr("stroke-width", 2);
+            })
+            .on("mousemove", function(event) {
+              tooltip
+                .style("top", (event.pageY + 15) + "px")
+                .style("left", (event.pageX + 15) + "px");
+            })
+            .on("mouseout", function() {
+              tooltip.style("visibility", "hidden");
+
+              d3.select(this)
+                .attr("stroke", "#999")
+                .attr("stroke-width", 1);
+            });
+
+      }
+  </script>
+</body>
+</html>

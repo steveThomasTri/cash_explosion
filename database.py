@@ -241,3 +241,15 @@ def cities():
   mycursor.execute(sql)
   myresult = mycursor.fetchall()
   return myresult
+
+def county():
+  mycursor = mydb.cursor()
+  sql = "select count(ticketPurchasedCity) AS contestantCount, floor(avg(code)), county, round(avg(gameTotal),2) from players inner join cities on players.ticketPurchasedCity = cities.city group by county"
+  mycursor.execute(sql)
+  myresult = mycursor.fetchall()
+  #print(myresult)
+  countyData = {}
+  for result in myresult:
+    #print(result)
+    countyData[str(result[1])] = {"contestantcount":result[0],"averagebase":result[3]}
+  return countyData

@@ -236,7 +236,7 @@ def cities():
           FROM champions
           GROUP BY playerID
       ) AS champ_count ON champ_count.playerID = players.id
-  GROUP BY cities.city, cities.lon, cities.lat, cities.county;  
+  GROUP BY cities.city, cities.lon, cities.lat, cities.county ORDER BY GT desc;  
 """
   mycursor.execute(sql)
   myresult = mycursor.fetchall()

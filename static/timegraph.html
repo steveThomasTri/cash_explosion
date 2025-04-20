@@ -20,6 +20,12 @@
   <svg id="bar-chart" width="800" height="400"></svg>
 
   <script>
+    let USDollar = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
 
     d3.json("/weeklydata").then(data => {        
         data.forEach(d => {
@@ -112,6 +118,20 @@
         .attr("width", xBar.bandwidth())
         .attr("height", d => barHeight - yBar(d.value))
         .attr("fill", "green");
+
+        // Bar labels (inside bars)
+        gBar.selectAll(".bar-label")
+            .data(monthlyData)
+            .enter()
+            .append("text")
+            .attr("class", "bar-label")
+            .attr("x", d => xBar(d.date) + xBar.bandwidth() / 2)
+            .attr("y", d => yBar(d.value) + 30) // Adjust as needed depending on your bar height
+            .attr("text-anchor", "middle")
+            .attr("fill", "white") // Or black, depending on your bar color
+            .style("font-size", "32px")
+            .text(d => USDollar.format(d.value));
+
     });
   </script>
 </body>

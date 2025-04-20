@@ -74,7 +74,7 @@ for city in myresult:
             time.sleep(2)
             continue
         time.sleep(1)
-
+"""
 # Create a geolocator object
 #geolocator = Nominatim(user_agent="city_locator")
 
@@ -89,7 +89,7 @@ for city in myresult:
 import json
 
 mycursor = mydb.cursor()
-sql = f"SELECT county from cities"
+sql = f"SELECT county from cities where code is null"
 mycursor.execute(sql)
 myresult = mycursor.fetchall()
 print(myresult)
@@ -115,7 +115,7 @@ with open('county.json', 'r') as file:
                 mycursor.execute(sql, addr)
                 mydb.commit()
                 break
-"""
+
 '''
 mycursor = mydb.cursor()
 sql = f"UPDATE cities SET code=26115 where city='TEMPERANCE, MI'"

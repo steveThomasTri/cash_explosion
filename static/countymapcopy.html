@@ -67,8 +67,9 @@
         const counties = topojson.feature(us, us.objects.counties).features;
         const ohioCounties = counties.filter(d => d.id.startsWith("39"));
         const monroeCounty = counties.find(d => d.id === "26115");
+        const cabellCounty = counties.find(d => d.id === "54011");
 
-        const allCounties = [...ohioCounties, monroeCounty];
+        const allCounties = [...ohioCounties, monroeCounty, cabellCounty];
 
         svg.selectAll("path.county")
           .data(allCounties)
@@ -105,8 +106,8 @@
           const maxVal = d3.max(values);
 
           const colorScale = d3.scaleSequential()
-            .domain([minVal, maxVal])
-            .interpolator(d3.interpolateBlues); // you can swap this out too if you want different color schemes
+          .domain([minVal, maxVal])
+          .interpolator(d3.interpolateRgb("#c8ffc8", "#004d40")); // you can swap this out too if you want different color schemes
         //----------
         svg.selectAll("path.county")
           .transition()
@@ -130,6 +131,7 @@
               const key = datasets[currentDatasetIndex];
 
               let value = data && data[key] !== undefined ? data[key] : "No data";
+              console.log(data)
 
               tooltip
                 .style("visibility", "visible")

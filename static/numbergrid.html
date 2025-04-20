@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 4x6 Grid with Tooltips and Panel</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(6, 80px);
+      gap: 15px;
+      margin: 40px 0;
+      justify-content: center;
+    }
+
+    .cell {
+      width: 80px;
+      height: 80px;
+      background-color: #3498db;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .tooltip {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .panel {
+      width: 520px;
+      max-width: 90vw;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+<button id="cycleBtn">Next Dataset</button>
+<div id="datasetLabel"></div>
+<div class="grid" id="grid"></div>
+<div class="tooltip" id="tooltip"></div>
+
+<div class="panel" id="panel">
+  <h2>Info Panel</h2>
+  <p>Hover over a cell to see more details.</p>
+</div>
+
+<script>
+let USDollar = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
+  //const data = d3.range(1, 25); // Numbers 1 to 24
+  const grid = d3.select("#grid");
+  const tooltip = d3.select("#tooltip");
+  const panel = d3.select("#panel");
+
+  let datasets = ["count","specialeventcount","avgscore"]
+    let currentDatasetIndex = 2
+    let numbersData = {}
+
+    const colorScale = d3.scaleSequential()
+        .domain([0, 100]) // adjust domain based on your data
+        .interpolator(d3.interpolateBlues);
+
+  d3.json("/numberdata").then(number => {
+    numbersData = number
+
+    grid.selectAll("div.cell")
+    .data(number)
+    .enter()
+    .append("div")
+    .attr("class", "cell")
+    .text(d => d.number)
+    .on("mouseover", (event, d) => {
+      tooltip
+        .style("opacity", 1)
+        .html(`Tooltip for ${d.number}`);
+    })
+    .on("mousemove", (event) => {
+      tooltip
+        .style("left", (event.pageX + 10) + "px")
+        .style("top", (event.pageY - 30) + "px");
+    })
+    .on("mouseout", () => {
+      tooltip.style("opacity", 0);
+    })
+    .on("click", (event, d) => {
+      panel.select("p").html(`You clicked on cell ${d.number}.<br>Average Dollar: ${USDollar.format(d.avgscore)}<br>Number of times picked: ${d.count}`);
+    });
+
+    updateMap(); // initial render
+
+    d3.select("#cycleBtn").on("click", () => {
+        currentDatasetIndex = (currentDatasetIndex + 1) % datasets.length;
+        updateMap()
+    });
+  });
+
+  function updateMap(){
+    const key = datasets[currentDatasetIndex];
+    d3.select("#datasetLabel").text(`Showing ${key}`)
+
+    const values = Object.values(numbersData)
+        .map(d => d[key])
+        .filter(v => v !== undefined && v !== null)
+
+        const minVal = d3.min(values)
+        const maxVal = d3.max(values)
+
+        const colorScale = d3.scaleSequential()
+        .domain([minVal, maxVal])
+        .interpolator(d3.interpolateHcl("blue", "red")); 
+
+
+        console.log(numbersData)
+
+    grid.selectAll("div.cell")
+        .transition()
+        .duration(750)
+        .style("background-color", function(d){
+            return colorScale(d[key])
+        }
+    );
+
+    const tooltip = d3.select("#tooltip");
+    
+    grid.selectAll("div.cell")
+    .on("mouseover", function(event,d){
+        const key = datasets[currentDatasetIndex];
+        tooltip
+        .style("opacity", 1)
+        .html(`<strong>County ID:</strong> ${d.number}<br><strong>${key} ${d[key]}</strong>`);
+        
+        d3.select(this)
+        .attr("stroke", "#333")
+        .attr("stroke-width", 2);
+    })
+  }
+</script>
+
+</body>
+</html>

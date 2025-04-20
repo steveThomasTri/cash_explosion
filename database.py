@@ -253,3 +253,57 @@ def county():
     #print(result)
     countyData[str(result[1])] = {"contestantcount":result[0],"averagebase":result[3], "name":result[2]}
   return countyData
+
+def weekdata():
+  mycursor = mydb.cursor()
+  sql = """
+  select date, 
+  sum(bonus) + 
+  sum(
+    (case
+      when isChampion = 1 then (
+        case
+          when gameTotal + gameTotal >= 40000 then 75000
+                  else 50000
+              end
+              )
+      when (isChampion = 0 and isSecondChance = 1) then gameTotal + 5000
+          when (isChampion = 0 and isCashChallenge = 1) then gameTotal + gameTotal
+      else gameTotal
+    end)
+  ) +
+  (
+  case
+    when sum(isChampion) = 0 then 50000
+    else 0
+  end
+  ) as GT
+  from players group by date;  
+"""
+  mycursor.execute(sql)
+  myresult = mycursor.fetchall()
+  weekData = []
+  for result in myresult:
+    #print(result)
+    weekData.append({"date":result[0],"value":result[1]})
+  return weekData
+
+def numbers():
+  mycursor = mydb.cursor()
+  sql = """
+  SELECT
+    number,
+    COUNT(*) AS total_count,
+    COUNT(CASE WHEN specialEvent != '' THEN 1 END) AS special_event_count,
+    round(AVG(score),2) AS avg_score
+  FROM number_view
+  GROUP BY number
+  ORDER BY number;  
+  """
+  mycursor.execute(sql)
+  myresult = mycursor.fetchall()
+  numberData = []
+  for result in myresult:
+    #print(result)
+    numberData.append({"number":result[0],"count":result[1],"specialeventcount":result[2],"avgscore":result[3]})
+  return numberData

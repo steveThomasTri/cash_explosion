@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 Time Graph</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    svg {
+      font-family: sans-serif;
+    }
+    .line {
+      fill: none;
+      stroke: green;
+      stroke-width: 2px;
+    }
+  </style>
+</head>
+<body>
+  <svg width="800" height="400"></svg>
+  <svg id="bar-chart" width="800" height="400"></svg>
+
+  <script>
+
+    d3.json("/weeklydata").then(data => {        
+        data.forEach(d => {
+            const originalDate = new Date(d.date);
+            d.date = new Date(originalDate.getTime() + 5 * 60 * 60 * 1000); // add 5 hours
+            d.value = +d.value;
+        });
+
+        const svg = d3.select("svg"),
+          margin = { top: 20, right: 30, bottom: 30, left: 50 },
+          width = +svg.attr("width") - margin.left - margin.right,
+          height = +svg.attr("height") - margin.top - margin.bottom;
+        
+        const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+        const x = d3.scaleTime()
+        .domain(d3.extent(data, d => d.date))
+        .range([0, width]);
+
+        const y = d3.scaleLinear()
+        .domain([0, d3.max(data, d => d.value)])
+        .range([height, 0]);
+
+        const line = d3.line()
+        .x(d => x(d.date))
+        .y(d => y(d.value));
+
+        // X Axis
+        g.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y-%m-%d")));
+
+        // Y Axis
+        g.append("g")
+        .call(d3.axisLeft(y));
+
+        // Line
+        g.append("path")
+        .datum(data)
+        .attr("class", "line")
+        .attr("d", line)
+        .attr("stroke", "green");
+
+        const monthFormat = d3.timeFormat("%Y-%m");
+        const parseMonth = d3.timeParse("%Y-%m");
+
+        const monthlyData = Array.from(
+            d3.rollup(
+                data,
+                v => d3.sum(v, d => d.value),
+                d => monthFormat(d.date)
+            ),
+            ([month, value]) => ({ date: parseMonth(month), value })
+        );
+
+        const svgBar = d3.select("#bar-chart"),
+        barMargin = { top: 20, right: 30, bottom: 30, left: 50 },
+        barWidth = +svgBar.attr("width") - barMargin.left - barMargin.right,
+        barHeight = +svgBar.attr("height") - barMargin.top - barMargin.bottom;
+
+        const gBar = svgBar.append("g")
+        .attr("transform", `translate(${barMargin.left},${barMargin.top})`);
+
+        const xBar = d3.scaleBand()
+        .domain(monthlyData.map(d => d.date))
+        .range([0, barWidth])
+        .padding(0.2);
+
+        const yBar = d3.scaleLinear()
+        .domain([0, d3.max(monthlyData, d => d.value)])
+        .range([barHeight, 0]);
+
+        // X Axis (month labels)
+        gBar.append("g")
+        .attr("transform", `translate(0,${barHeight})`)
+        .call(d3.axisBottom(xBar).tickFormat(d3.timeFormat("%b %Y")));
+
+        // Y Axis (values)
+        gBar.append("g")
+        .call(d3.axisLeft(yBar));
+
+        // Bars
+        gBar.selectAll(".bar")
+        .data(monthlyData)
+        .enter()
+        .append("rect")
+        .attr("class", "bar")
+        .attr("x", d => xBar(d.date))
+        .attr("y", d => yBar(d.value))
+        .attr("width", xBar.bandwidth())
+        .attr("height", d => barHeight - yBar(d.value))
+        .attr("fill", "green");
+    });
+  </script>
+</body>
+</html>

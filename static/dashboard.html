@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Responsive Ohio Map with Columbus</title>
+  <title>Cash Explosion Ticket Purchased Winnings</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://d3js.org/topojson.v3.min.js"></script>
   <style>
@@ -56,26 +56,19 @@
     // Optional: Click anywhere else to hide the tooltip
 
     d3.json("/citydata").then(data =>{
-        data.forEach(data => {
-            console.log(data)
-            const city = [data[1], data[2]];
+        data.forEach(d => {
+            //console.log(d)
+            const city = [d[1], d[2]];
             const [x, y] = projection(city);
 
             const marker = svg.append("circle")
                 .attr("class", "marker")
                 .attr("cx", x)
                 .attr("cy", y)
-                .attr("r", parseInt(data[5]) / 2000)
+                .attr("r", parseInt(d[5]) / 2000)
                 .style("fill", "green")
                 .style("stroke", "black")
                 .style("cursor", "pointer")
-
-            svg.append("text")
-                .attr("x", x + 8)         // shift right a little
-                .attr("y", y + 5)         // shift up a little
-                .attr("font-size", "14px")
-                .attr("fill", "#333")
-                .attr("font-family", "sans-serif");
 
             marker.on("click", (event)=> {
                 const isVisible = tooltip.style("display") === "block";
@@ -87,7 +80,7 @@
                     tooltip
                     .style("left", (event.pageX + 10) + "px")
                     .style("top", (event.pageY - 20) + "px")
-                    .html(`<strong>${data[0]}</strong><br>Contestants so far ${data[4]}<br>Total Amount Won<br>$${data[5]}`)
+                    .html(`<strong>${d[0]}</strong><br>Contestants so far ${d[4]}<br>Total Amount Won<br>$${d[5]}`)
                     .style("display", "block");
                 }
             })

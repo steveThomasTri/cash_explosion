@@ -49,7 +49,7 @@
 
     const path = d3.geoPath().projection(projection);
 
-    let datasets = ["contestantcount","averagebase","averagewinnings"]
+    let datasets = ["ticketpurchasedcount","ticketpurchasedbase","homecountytotal", "homecountybase"]
     let currentDatasetIndex = 0
     let countyData = {} //holding flask data
 
@@ -105,9 +105,9 @@
           const minVal = d3.min(values);
           const maxVal = d3.max(values);
 
-          const colorScale = d3.scaleSequential()
+          const colorScale = d3.scaleSequentialLog()
           .domain([minVal, maxVal])
-          .interpolator(d3.interpolateRgb("#c8ffc8", "#004d40")); // you can swap this out too if you want different color schemes
+          .interpolator(d3.interpolateViridis); // you can swap this out too if you want different color schemes
         //----------
         svg.selectAll("path.county")
           .transition()
@@ -115,8 +115,15 @@
           .attr("fill", function(d) {
             const countyId = d.id;
             const data = countyData[countyId];
-            if (data && data[key] !== undefined) {
-              return colorScale(data[key]);
+            //console.log(data)
+            if (data && data[key] !== null) {
+              console.log(data[key])
+              if (data[key] !== null) {
+                return colorScale(data[key]);
+              }
+              else{
+                return "#ccc"
+              }
             } else {
               return "#ccc"; // fallback for missing data
             }
@@ -130,12 +137,12 @@
               const data = countyData[countyId];
               const key = datasets[currentDatasetIndex];
 
-              let value = data && data[key] !== undefined ? data[key] : "No data";
-              console.log(data)
+              let value = data && data[key] !== null ? data[key] : "No data";
+              //console.log(data)
 
               tooltip
                 .style("visibility", "visible")
-                .html(`<strong>County ID:</strong> ${countyId}<br><strong>${data["name"]}</strong><br><strong>${key}:</strong> ${value}`);
+                .html(`<strong>${data["name"]}</strong><br><strong>${key}:</strong> ${value}`);
               
               d3.select(this)
                 .attr("stroke", "#333")

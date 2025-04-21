@@ -237,6 +237,8 @@ def cities():
 
 def county():
   mycursor = mydb.cursor()
+  '''
+  #Data is based on the ticket Purchased city
   sql = "select count(ticketPurchasedCity) AS contestantCount, floor(avg(code)), county, round(avg(gameTotal),2) from players inner join cities on players.ticketPurchasedCity = cities.city group by county"
   mycursor.execute(sql)
   myresult = mycursor.fetchall()
@@ -244,7 +246,75 @@ def county():
   countyData = {}
   for result in myresult:
     #print(result)
-    countyData[str(result[1])] = {"contestantcount":result[0],"averagebase":result[3], "name":result[2]}
+    countyData[str(result[1])] = {"ticketpurchasedcount":result[0],"averagebase":result[3], "name":result[2]}
+  return countyData
+  '''
+  sql = '''
+  SELECT
+    tp.county AS county,
+    COALESCE(tp.countyCode, hc.countyCode) AS countyCode,
+    tp.ticketPurchasedCount,
+    tp.ticketPurchasedTotal,
+    hc.homeCountyCount,
+    hc.homeCountyTotal
+  FROM (
+    SELECT
+      county,
+      FLOOR(AVG(code)) AS countyCode,
+      COUNT(ticketPurchasedCity) AS ticketPurchasedCount,
+      ROUND(AVG(gameTotal), 2) AS ticketPurchasedTotal
+    FROM players
+    INNER JOIN cities ON players.ticketPurchasedCity = cities.city
+    GROUP BY county
+  ) tp
+  LEFT JOIN (
+    SELECT
+      county,
+      FLOOR(AVG(code)) AS countyCode,
+      COUNT(playerCity) AS homeCountyCount,
+      ROUND(AVG(gameTotal), 2) AS homeCountyTotal
+    FROM players
+    INNER JOIN cities ON players.playerCity = cities.city
+    GROUP BY county
+  ) hc ON tp.county = hc.county
+
+  UNION
+
+  -- RIGHT JOIN part: home county data with no matching ticket purchase data
+  SELECT
+    hc.county AS county,
+    COALESCE(tp.countyCode, hc.countyCode) AS countyCode,
+    tp.ticketPurchasedCount,
+    tp.ticketPurchasedTotal,
+    hc.homeCountyCount,
+    hc.homeCountyTotal
+  FROM (
+    SELECT
+      county,
+      FLOOR(AVG(code)) AS countyCode,
+      COUNT(ticketPurchasedCity) AS ticketPurchasedCount,
+      ROUND(AVG(gameTotal), 2) AS ticketPurchasedTotal
+    FROM players
+    INNER JOIN cities ON players.ticketPurchasedCity = cities.city
+    GROUP BY county
+  ) tp
+  RIGHT JOIN (
+    SELECT
+      county,
+      FLOOR(AVG(code)) AS countyCode,
+      COUNT(playerCity) AS homeCountyCount,
+      ROUND(AVG(gameTotal), 2) AS homeCountyTotal
+    FROM players
+    INNER JOIN cities ON players.playerCity = cities.city
+    GROUP BY county
+  ) hc ON tp.county = hc.county
+  WHERE tp.county IS NULL;
+  '''
+  mycursor.execute(sql)
+  myresult = mycursor.fetchall()
+  countyData = {}
+  for result in myresult:
+    countyData[str(result[1])] = {"ticketpurchasedcount":result[2],"ticketpurchasedbase":result[3], "homecountytotal":result[4], "homecountybase":result[5], "name":result[0]}
   return countyData
 
 def weekdata():

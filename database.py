@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+#using a connection pool
 host = os.getenv("HOST")
 password = os.getenv("PASSWORD")
 user = os.getenv("USER")
@@ -17,7 +18,6 @@ mydb = mysql.connector.connect(
   )
 
 def insert_player(data):
-  print(data)
   mycursor = mydb.cursor()
 
   if data["turn_4"][0] == "":
@@ -74,14 +74,12 @@ def update_endgame_results(result):
   mycursor = mydb.cursor()
   mycursor.execute(sql, params)
   mydb.commit()
-  myresult = mycursor.rowcount
 
   mycursor = mydb.cursor()
   sql = f"UPDATE players SET isSecondChance = 1 where date= %s AND playerName=%s"
   addr = (result["date"],result["isSecondChance"],)
   mycursor.execute(sql, addr)
   mydb.commit()
-  myresult = mycursor.rowcount
 
   #champion
   #if new champ, new row goes in champions table
@@ -91,7 +89,6 @@ def update_endgame_results(result):
     addr = (result["date"],result["isChampion"],)
     mycursor.execute(sql, addr)
     mydb.commit()
-    myresult = mycursor.rowcount
 
     sql = """
     INSERT INTO champions (date, playerID)
@@ -104,7 +101,6 @@ def update_endgame_results(result):
     params = (result["date"], result["date"], result["isChampion"],)
     mycursor.execute(sql, params)
     mydb.commit()
-    myresult = mycursor.rowcount
   else:
     sql = """
     INSERT INTO champions (date, playerID)
@@ -115,8 +111,6 @@ def update_endgame_results(result):
     params = (result["date"],)
     mycursor.execute(sql, params)
     mydb.commit()
-    myresult = mycursor.rowcount
-    print(myresult)
 
 def verify2(date):
   mycursor = mydb.cursor()
@@ -138,7 +132,6 @@ def totalwinnings(date):
   addr = (date["date"],)
   mycursor.execute(sql, addr)
   myresult = mycursor.fetchone()
-  print(myresult)
   #results will be (1,0) (1,1) or None
   #if returning champioon wins
   if myresult == None:

@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Cash Explosion Data Center">
 
     <title>Cash Explosion Data Center</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
@@ -21,6 +20,7 @@
       <input type="date" id="inputDate" class="form-control" placeholder="Date" required autofocus>
       <br>
       <button class="btn btn-lg btn-primary btn-block" id="sendform">START!</button>
+      <button class="btn btn-lg btn btn-info btn-block" id="dashboard">Dashboard</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2025</p>
     </form>
   </body>
@@ -31,6 +31,10 @@
         localStorage.setItem("date", datee)
         localStorage.setItem("player#", 1)
         window.location.replace("/");
+    });
+
+    document.getElementById("dashboard").addEventListener("click", function() {
+        window.location.replace("/testdashboard");
     });
   </script>
 </html>

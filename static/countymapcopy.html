@@ -62,7 +62,7 @@
         d3.json("/countydata")
       ]).then(([us, data]) => {
         countyData = data;
-        console.log(countyData)
+        //console.log(countyData)
 
         const counties = topojson.feature(us, us.objects.counties).features;
         const ohioCounties = counties.filter(d => d.id.startsWith("39"));
@@ -117,7 +117,7 @@
             const data = countyData[countyId];
             //console.log(data)
             if (data && data[key] !== null) {
-              console.log(data[key])
+              //console.log(data[key])
               if (data[key] !== null) {
                 return colorScale(data[key]);
               }

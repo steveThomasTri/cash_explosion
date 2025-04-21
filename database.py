@@ -208,28 +208,47 @@ def totalwinnings(date):
 def cities():
   mycursor = mydb.cursor()
   sql = """
-  SELECT city, lon, lat, county, count(ticketPurchasedCity), 
-  sum(
-  CASE
-    when (isCashChallenge = 1 and isChampion = 0) then gameTotal + gameTotal
-      when (isSecondChance = 1 and isChampion = 0) then gameTotal + 5000
-      when (isChampion = 1) then 
+  SELECT 
+    city, 
+    lon, 
+    lat, 
+    county, 
+    COUNT(ticketPurchasedCity) AS purchaseCount, 
+    SUM(
       CASE
-        when coalesce(champ_count.champion_count, 0) = 2 then 100000
-              when champ_count.champion_count = 1 then 50000
+        WHEN (isCashChallenge = 1 AND isChampion = 0) THEN gameTotal + gameTotal
+        WHEN (isSecondChance = 1 AND isChampion = 0) THEN gameTotal + 5000
+        WHEN (isChampion = 1) THEN 
+          CASE
+            WHEN COALESCE(champ_count.champion_count, 0) = 2 THEN 100000
+            WHEN champ_count.champion_count = 1 THEN 50000
           END
-      else gameTotal
-  END) as GT
-  from cities 
+        ELSE gameTotal
+      END
+    ) AS GT,
+    round(SUM(
+      CASE
+        WHEN (isCashChallenge = 1 AND isChampion = 0) THEN gameTotal + gameTotal
+        WHEN (isSecondChance = 1 AND isChampion = 0) THEN gameTotal + 5000
+        WHEN (isChampion = 1) THEN 
+          CASE
+            WHEN COALESCE(champ_count.champion_count, 0) = 2 THEN 100000
+            WHEN champ_count.champion_count = 1 THEN 50000
+          END
+        ELSE gameTotal
+      END
+    ) / COUNT(ticketPurchasedCity), 2) AS average
+  FROM cities 
   INNER JOIN players 
-  ON cities.city = players.ticketPurchasedCity
-  LEFT JOIN 
-      (
-          SELECT playerID, COUNT(*) AS champion_count
-          FROM champions
-          GROUP BY playerID
-      ) AS champ_count ON champ_count.playerID = players.id
-  GROUP BY cities.city, cities.lon, cities.lat, cities.county ORDER BY GT desc;  
+    ON cities.city = players.ticketPurchasedCity
+  LEFT JOIN (
+      SELECT playerID, COUNT(*) AS champion_count
+      FROM champions
+      GROUP BY playerID
+  ) AS champ_count 
+    ON champ_count.playerID = players.id
+  GROUP BY cities.city, cities.lon, cities.lat, cities.county 
+  ORDER BY GT DESC;  
 """
   mycursor.execute(sql)
   myresult = mycursor.fetchall()

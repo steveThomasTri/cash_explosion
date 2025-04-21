@@ -53,38 +53,75 @@
 
     const tooltip = d3.select("#tooltip");
 
-    // Optional: Click anywhere else to hide the tooltip
+    let datasets = ["totalWinnings", "average winnings by ticket purchased city"]; // or d[5], d[4], etc.
+    let currentDatasetIndex = 0;
+    //0 would be d[5] and 1 would be d[6]
 
-    d3.json("/citydata").then(data =>{
-        data.forEach(d => {
-            //console.log(d)
-            const city = [d[1], d[2]];
-            const [x, y] = projection(city);
+    d3.select("body")
+      .append("button")
+      .text("Switch Dataset")
+      .on("click", () => {
+        currentDatasetIndex = (currentDatasetIndex + 1) % datasets.length;
+        updateMarkers(); // update sizes/colors
+      });
 
-            const marker = svg.append("circle")
-                .attr("class", "marker")
-                .attr("cx", x)
-                .attr("cy", y)
-                .attr("r", parseInt(d[5]) / 2000)
-                .style("fill", "green")
-                .style("stroke", "black")
-                .style("cursor", "pointer")
+    //change colors of a circle
+    function cityColor(amount){
+      if (parseInt(amount) >= 100000){
+        return "red"
+      }
+      else if (parseInt(amount) >= 50000){
+        return "orange"
+      }
+      else if (parseInt(amount) >= 25000){
+        return "yellow"
+      }
+      else if (parseInt(amount) >= 10000){
+        return "green"
+      }
+      else{
+        return "blue"
+      }
+    }
+    
+    function updateMarkers(){
+      svg.selectAll("circle.marker").remove(); // remove old markers
+      data.forEach(d => {
+        const city = [d[1], d[2]];
+        const [x, y] = projection(city);
 
-            marker.on("click", (event)=> {
-                const isVisible = tooltip.style("display") === "block";
+        const datasetKey = datasets[currentDatasetIndex];
+        const value = datasetKey === "totalWinnings" ? parseInt(d[5]) : parseInt(d[6]); // update logic here
+        const scaler = datasetKey === "totalWinnings" ? 2000 : 1000; // update logic here
+        const marker = svg.append("circle")
+            .attr("class", "marker")
+            .attr("cx", x)
+            .attr("cy", y)
+            .attr("r", value / scaler)
+            .style("fill", cityColor(value))
+            .style("stroke", "black")
+            .style("cursor", "pointer")
 
-                if(isVisible){
-                    tooltip.style("display", "none");
-                }
-                else{
-                    tooltip
-                    .style("left", (event.pageX + 10) + "px")
-                    .style("top", (event.pageY - 20) + "px")
-                    .html(`<strong>${d[0]}</strong><br>Contestants so far ${d[4]}<br>Total Amount Won<br>$${d[5]}`)
-                    .style("display", "block");
-                }
-            })
-        });
+        marker.on("click", (event)=> {
+            const isVisible = tooltip.style("display") === "block";
+
+            if(isVisible){
+                tooltip.style("display", "none");
+            }
+            else{
+                tooltip
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY - 20) + "px")
+                .html(`<strong>${d[0]}</strong><br>Contestants so far ${d[4]}<br>Total Amount Won<br>$${d[5]}<br>Average Amount is ${d[6]}`)
+                .style("display", "block");
+            }
+        })
+    });
+    }
+
+    d3.json("/citydata").then(fetchedData =>{
+      data = fetchedData;
+      updateMarkers();
     })   
   });
 </script>

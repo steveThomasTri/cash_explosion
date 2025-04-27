@@ -1,0 +1,534 @@
+Circle K, 1281 Copley Road, Akron, OH 44320, United States of America
+COPLEY ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Akron', '_type': 'shop', 'city': 'Akron', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Summit County', 'house_number': '1281', 'neighbourhood': 'West Akron', 'postcode': '44320', 'road': 'Copley Road', 'shop': 'Circle K', 'state': 'Ohio', 'state_code': 'OH', 'suburb': 'West Akron'}
+41.0837431
+-81.5676432
+---------------------------------------------------------------------------------------
+3014 West North Bend Road, Monfort Heights, Green Township, OH 45239, United States of America
+NORTH BEND ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Green Township', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Hamilton County', 'hamlet': 'Monfort Heights', 'house_number': '3014', 'municipality': 'Green Township', 'postcode': '45239', 'road': 'West North Bend Road', 'state': 'Ohio', 'state_code': 'OH'}
+39.189622
+-84.584715
+---------------------------------------------------------------------------------------
+2200 West Elm Street, Lima, OH 45805, United States of America
+ALLENTOWN ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Lima', '_type': 'building', 'city': 'Lima', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Allen County', 'house_number': '2200', 'postcode': '45805', 'road': 'West Elm Street', 'state': 'Ohio', 'state_code': 'OH'}
+40.737105
+-84.145877
+---------------------------------------------------------------------------------------
+298 Delray Drive, Sandhill, Washington County, OH 45750, United States of America
+UNITED LANE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Sandhill', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Washington County', 'hamlet': 'Sandhill', 'house_number': '298', 'postcode': '45750', 'road': 'Delray Drive', 'state': 'Ohio', 'state_code': 'OH'}
+39.374908
+-81.390484
+---------------------------------------------------------------------------------------
+23100 Sprague Road, Olmsted Falls, OH 44138, United States of America
+WEST RIDGEWOOD DRIVE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Olmsted Falls', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '23100', 'municipality': 'Columbia Township', 'postcode': '44138', 'road': 'Sprague Road', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Olmsted Falls'}
+41.350685
+-81.87696
+---------------------------------------------------------------------------------------
+836 Barnes Road North, Volunteer Bay, Vermilion Township, OH 44089, United States of America
+EAST LAKE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Vermilion Township', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Erie County', 'hamlet': 'Volunteer Bay', 'house_number': '836', 'municipality': 'Vermilion Township', 'postcode': '44089', 'road': 'Barnes Road North', 'state': 'Ohio', 'state_code': 'OH'}
+41.396161
+-82.419044
+---------------------------------------------------------------------------------------
+Kroger, 7345 North State Street, Westerville, OH 43082, United States of America
+WEST SCHROCK ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Westerville', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Delaware County', 'house_number': '7345', 'postcode': '43082', 'road': 'North State Street', 'shop': 'Kroger', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Westerville'}
+40.1498383
+-82.9209467
+---------------------------------------------------------------------------------------
+Former Village Hall, 7816 Cooper Road, Montgomery, OH 45242, United States of America
+EAST SHARON ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Montgomery', '_type': 'building', 'building': 'Former Village Hall', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Hamilton County', 'house_number': '7816', 'postcode': '45242', 'road': 'Cooper Road', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Montgomery'}
+39.2266
+-84.355728
+---------------------------------------------------------------------------------------
+Phases Salon, 16 East Spaulding Street, Willoughby, OH 44094, United States of America
+LAKE SHORE BOULEVARD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Willoughby', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lake County', 'house_number': '16', 'postcode': '44094', 'road': 'East Spaulding Street', 'shop': 'Phases Salon', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Willoughby'}
+41.63977
+-81.4065
+---------------------------------------------------------------------------------------
+Norm's Market, 240 Main Street, Groveport, Madison Township, OH 43125, United States of America
+MAIN STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Groveport', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Franklin County', 'house_number': '240', 'municipality': 'Madison Township', 'postcode': '43125', 'road': 'Main Street', 'shop': "Norm's Market", 'state': 'Ohio', 'state_code': 'OH', 'village': 'Groveport'}
+39.8536584
+-82.8931851
+---------------------------------------------------------------------------------------
+11 6th Road, Cleveland, OH 44109, United States of America
+RIDGE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Cleveland', '_type': 'building', 'city': 'Cleveland', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '11', 'postcode': '44109', 'quarter': 'Old Brooklyn', 'road': '6th Road', 'state': 'Ohio', 'state_code': 'OH'}
+41.420148
+-81.700878
+---------------------------------------------------------------------------------------
+Giant Eagle, 14650 Snow Road, Brook Park, OH 44142, United States of America
+SNOW ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Brook Park', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '14650', 'postcode': '44142', 'road': 'Snow Road', 'shop': 'Giant Eagle', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Brook Park'}
+41.4059639
+-81.7979527
+---------------------------------------------------------------------------------------
+5998 Hill Avenue, Toledo, OH 43615, United States of America
+NORTH HOLLAND SYLVANIA ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Toledo', '_type': 'building', 'city': 'Toledo', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lucas County', 'house_number': '5998', 'postcode': '43615', 'road': 'Hill Avenue', 'state': 'Ohio', 'state_code': 'OH'}
+41.638594
+-83.684289
+---------------------------------------------------------------------------------------
+Murphy USA, North 21st Street, Newark, OH 43055, United States of America
+NORTH 21ST STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Newark', '_type': 'fuel', 'city': 'Newark', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Licking County', 'fuel': 'Murphy USA', 'postcode': '43055', 'road': 'North 21st Street', 'state': 'Ohio', 'state_code': 'OH'}
+40.0856536
+-82.4280858
+---------------------------------------------------------------------------------------
+98 Clarks Lane, Rome Township, OH 45669, United States of America
+COUNTY ROAD 450
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Rome Township', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lawrence County', 'house_number': '98', 'municipality': 'Rome Township', 'neighbourhood': 'Riverview', 'postcode': '45669', 'road': 'Clarks Lane', 'state': 'Ohio', 'state_code': 'OH'}
+38.443901
+-82.343993
+---------------------------------------------------------------------------------------
+699 Tori Circle, Wooster, OH 44691, United States of America
+SOUTH CHESTNUT STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Wooster', '_type': 'building', 'city': 'Wooster', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Wayne County', 'house_number': '699', 'postcode': '44691', 'road': 'Tori Circle', 'state': 'Ohio', 'state_code': 'OH'}
+40.838391
+-81.93222
+---------------------------------------------------------------------------------------
+101 Silverside Drive, Toledo, OH 43612, United States of America
+EAST ALEXIS ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Toledo', '_type': 'building', 'city': 'Toledo', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lucas County', 'house_number': '101', 'neighbourhood': 'North Towne', 'postcode': '43612', 'road': 'Silverside Drive', 'state': 'Ohio', 'state_code': 'OH'}
+41.721804
+-83.553728
+---------------------------------------------------------------------------------------
+Meijer, 8000 East Broad Street, Reynoldsburg, OH 43004, United States of America
+EAST BROAD STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Reynoldsburg', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Franklin County', 'house_number': '8000', 'postcode': '43004', 'road': 'East Broad Street', 'shop': 'Meijer', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Reynoldsburg'}
+39.9882042
+-82.7880933
+---------------------------------------------------------------------------------------
+US Highway 20, Rossford, Wood County, OH 43551, United States of America
+WEST BOUNDARY STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Rossford', '_type': 'parking', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Wood County', 'postcode': '43551', 'road': 'US Highway 20', 'state': 'Ohio', 'state_code': 'OH', 'village': 'Rossford'}
+41.535057
+-83.577701
+---------------------------------------------------------------------------------------
+Speedway, 1100 West Maple Street, Hartville, Lake Township, OH 44632, United States of America
+WEST MAPLE STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Hartville', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Stark County', 'house_number': '1100', 'municipality': 'Lake Township', 'postcode': '44632', 'road': 'West Maple Street', 'shop': 'Speedway', 'state': 'Ohio', 'state_code': 'OH', 'village': 'Hartville'}
+40.9680531
+-81.3492115
+---------------------------------------------------------------------------------------
+Fuel Mart, 404 North Urbana Street, South Vienna, Clark County, OH 45369, United States of America
+NORTH URBANA STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'South Vienna', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Clark County', 'house_number': '404', 'postcode': '45369', 'road': 'North Urbana Street', 'shop': 'Fuel Mart', 'state': 'Ohio', 'state_code': 'OH', 'village': 'South Vienna'}
+39.9357287
+-83.6112745
+---------------------------------------------------------------------------------------
+201 Dixon Street, Kenton, OH 43326, United States of America
+CLEVELAND AVENUE SW
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Kenton', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Hardin County', 'house_number': '201', 'neighbourhood': 'Scioto Village', 'postcode': '43326', 'road': 'Dixon Street', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Kenton'}
+40.64496
+-83.602755
+---------------------------------------------------------------------------------------
+Beach Road, Sharon Township, OH 44281, United States of America
+BROAD STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'road', '_normalized_city': 'Sharon Township', '_type': 'road', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Medina County', 'municipality': 'Sharon Township', 'postcode': '44281', 'road': 'Beach Road', 'road_reference': 'TR 54', 'state': 'Ohio', 'state_code': 'OH'}
+41.071841
+-81.751008
+---------------------------------------------------------------------------------------
+1598 Perry Drive Northwest, Jackson Township, OH 44708, United States of America
+EAST COLUMBUS STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Jackson Township', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Stark County', 'house_number': '1598', 'municipality': 'Jackson Township', 'postcode': '44708', 'road': 'Perry Drive Northwest', 'state': 'Ohio', 'state_code': 'OH'}
+40.816442
+-81.453897
+---------------------------------------------------------------------------------------
+4499 Biers Run Road, Ross County, OH 45601, United States of America
+JONES ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Ross County', 'house_number': '4499', 'postcode': '45601', 'road': 'Biers Run Road', 'state': 'Ohio', 'state_code': 'OH'}
+39.386471
+-83.078521
+---------------------------------------------------------------------------------------
+Zenobia Road, West Hartland, Bronson Township, OH 44857, United States of America
+MADISON STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'road', '_normalized_city': 'Bronson Township', '_type': 'road', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Huron County', 'hamlet': 'West Hartland', 'municipality': 'Bronson Township', 'postcode': '44857', 'road': 'Zenobia Road', 'state': 'Ohio', 'state_code': 'OH'}
+41.204562
+-82.573222
+---------------------------------------------------------------------------------------
+Sheetz, East Broad Street, Columbus, OH 43073, United States of America
+ROBERTS ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Columbus', '_type': 'fuel', 'city': 'Columbus', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Franklin County', 'fuel': 'Sheetz', 'postcode': '43073', 'road': 'East Broad Street', 'state': 'Ohio', 'state_code': 'OH'}
+39.9856276
+-82.7822056
+---------------------------------------------------------------------------------------
+8601 Harrow Drive, Parma, OH 44129, United States of America
+BROADVIEW ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Parma', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '8601', 'postcode': '44129', 'road': 'Harrow Drive', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Parma'}
+41.412603
+-81.744774
+---------------------------------------------------------------------------------------
+2215 Navarre Avenue, Oregon, OH 43616, United States of America
+NAVARRE AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Oregon', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lucas County', 'house_number': '2215', 'postcode': '43616', 'road': 'Navarre Avenue', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Oregon'}
+41.636572
+-83.494793
+---------------------------------------------------------------------------------------
+4000 Old Columbus Road, Clark County, OH 45502, United States of America
+MECHANICSBURG ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Clark County', 'house_number': '4000', 'postcode': '45502', 'road': 'Old Columbus Road', 'state': 'Ohio', 'state_code': 'OH'}
+39.938169
+-83.730328
+---------------------------------------------------------------------------------------
+Grove City Library, Civic Place, Grove City, OH 43123, United States of America
+DARTMOOR ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'education', '_normalized_city': 'Grove City', '_type': 'library', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Franklin County', 'library': 'Grove City Library', 'municipality': 'Jackson Township', 'postcode': '43123', 'road': 'Civic Place', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Grove City'}
+39.88145
+-83.09296
+---------------------------------------------------------------------------------------
+Speedway, 32760 Lorain Road, North Ridgeville, OH 44039, United States of America
+CENTER RIDGE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'North Ridgeville', '_type': 'fuel', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lorain County', 'fuel': 'Speedway', 'house_number': '32760', 'postcode': '44039', 'road': 'Lorain Road', 'state': 'Ohio', 'state_code': 'OH', 'town': 'North Ridgeville'}
+41.3831247
+-81.980064
+---------------------------------------------------------------------------------------
+10592 Falls Creek Lane, Washington Township, OH 45458, United States of America
+WEST SIEBENTHALER AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Washington Township', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Montgomery County', 'house_number': '10592', 'municipality': 'Washington Township', 'postcode': '45458', 'road': 'Falls Creek Lane', 'state': 'Ohio', 'state_code': 'OH'}
+39.591184
+-84.198523
+---------------------------------------------------------------------------------------
+810 Colonel Drive, Cleveland, OH 44109, United States of America
+RIDGE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Cleveland', '_type': 'building', 'city': 'Cleveland', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '810', 'neighbourhood': 'South Hills', 'postcode': '44109', 'quarter': 'Old Brooklyn', 'road': 'Colonel Drive', 'state': 'Ohio', 'state_code': 'OH'}
+41.432114
+-81.684418
+---------------------------------------------------------------------------------------
+30394 Ridge Road, Wickliffe, OH 44092, United States of America
+EUCLID AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Wickliffe', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lake County', 'house_number': '30394', 'postcode': '44092', 'road': 'Ridge Road', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Wickliffe'}
+41.60533
+-81.45345
+---------------------------------------------------------------------------------------
+Marathon, Chandler Avenue, Akron, OH 44314, United States of America
+DIAGONAL ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Akron', '_type': 'fuel', 'city': 'Akron', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Summit County', 'fuel': 'Marathon', 'neighbourhood': 'Rolling Acres', 'postcode': '44314', 'road': 'Chandler Avenue', 'state': 'Ohio', 'state_code': 'OH', 'suburb': 'Kenmore'}
+41.0461493
+-81.5702741
+---------------------------------------------------------------------------------------
+Panhandle Trail, Hanover, Hanover Township, OH, United States of America
+EAST MAIN STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'road', '_normalized_city': 'Hanover', '_type': 'road', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Licking County', 'municipality': 'Hanover Township', 'road': 'Panhandle Trail', 'road_type': 'cycleway', 'state': 'Ohio', 'state_code': 'OH', 'village': 'Hanover'}
+40.076079
+-82.262832
+---------------------------------------------------------------------------------------
+Mentor Food Mart, Dartmoor Road, Reynolds, Mentor, OH 44094, United States of America
+MENTOR AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Mentor', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lake County', 'hamlet': 'Reynolds', 'neighbourhood': 'Midland Moor', 'postcode': '44094', 'road': 'Dartmoor Road', 'shop': 'Mentor Food Mart', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Mentor'}
+41.6545132
+-81.3737872
+---------------------------------------------------------------------------------------
+1001 Scenic Lane, Seven Hills, OH 44131, United States of America
+TURNEY ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Seven Hills', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '1001', 'postcode': '44131', 'road': 'Scenic Lane', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Seven Hills'}
+41.381512
+-81.677675
+---------------------------------------------------------------------------------------
+19600 Dell Drive, Strongsville, OH 44149, United States of America
+EAST 260TH STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Strongsville', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '19600', 'postcode': '44149', 'road': 'Dell Drive', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Strongsville'}
+41.319511
+-81.843025
+---------------------------------------------------------------------------------------
+1500 East 22nd Street, Cleveland, OH 44114, United States of America
+LEE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Cleveland', '_type': 'building', 'city': 'Cleveland', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '1500', 'neighbourhood': 'Downtown Cleveland', 'postcode': '44114', 'road': 'East 22nd Street', 'state': 'Ohio', 'state_code': 'OH'}
+41.50785
+-81.677318
+---------------------------------------------------------------------------------------
+Hollywood Gaming at Dayton Raceway, Wagner Ford Road, Dayton, OH 45414, United States of America
+HOLLYWOOD BOULEVARD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'outdoors/recreation', '_normalized_city': 'Dayton', '_type': 'sports_centre', 'city': 'Dayton', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Montgomery County', 'postcode': '45414', 'road': 'Wagner Ford Road', 'sports_centre': 'Hollywood Gaming at Dayton Raceway', 'state': 'Ohio', 'state_code': 'OH'}
+39.816425
+-84.1711083
+---------------------------------------------------------------------------------------
+3211 Day Court, Cincinnati, OH 45238, United States of America
+SPRINGDALE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Cincinnati', '_type': 'building', 'city': 'Cincinnati', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Hamilton County', 'house_number': '3211', 'postcode': '45238', 'road': 'Day Court', 'state': 'Ohio', 'state_code': 'OH', 'suburb': 'Westwood'}
+39.138456
+-84.60662
+---------------------------------------------------------------------------------------
+6077 Smith Road, Brook Park, OH 44142, United States of America
+SMITH ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Brook Park', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '6077', 'postcode': '44142', 'road': 'Smith Road', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Brook Park'}
+41.399663
+-81.804296
+---------------------------------------------------------------------------------------
+6514 State Route 772, Yankeetown, Ross County, OH 45601, United States of America
+BLAIN HIGHWAY
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Yankeetown', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Ross County', 'hamlet': 'Yankeetown', 'house_number': '6514', 'postcode': '45601', 'road': 'State Route 772', 'state': 'Ohio', 'state_code': 'OH'}
+39.242095
+-83.057668
+---------------------------------------------------------------------------------------
+99 Fairgrounds Road, Wellston, Jackson County, OH 45692, United States of America
+EAST 1ST STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Wellston', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Jackson County', 'house_number': '99', 'postcode': '45692', 'road': 'Fairgrounds Road', 'state': 'Ohio', 'state_code': 'OH', 'village': 'Wellston'}
+39.11036
+-82.541702
+---------------------------------------------------------------------------------------
+4671 Hattrick Road, Rootstown Township, Ravenna Township, OH 44266, United States of America
+WILSON AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Rootstown Township', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Portage County', 'house_number': '4671', 'municipality': 'Ravenna Township', 'postcode': '44266', 'road': 'Hattrick Road', 'state': 'Ohio', 'state_code': 'OH', 'village': 'Rootstown Township'}
+41.116636
+-81.213126
+---------------------------------------------------------------------------------------
+Phases Salon, 16 East Spaulding Street, Willoughby, OH 44094, United States of America
+LAKE SHORE BOULEVARD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Willoughby', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lake County', 'house_number': '16', 'postcode': '44094', 'road': 'East Spaulding Street', 'shop': 'Phases Salon', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Willoughby'}
+41.63977
+-81.4065
+---------------------------------------------------------------------------------------
+Mobil, Wilson Street, Washington Oaks, Washington Court House, OH 43160, United States of America
+COLUMBUS AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Washington Court House', '_type': 'fuel', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Fayette County', 'fuel': 'Mobil', 'hamlet': 'Washington Oaks', 'postcode': '43160', 'road': 'Wilson Street', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Washington Court House'}
+39.5445067
+-83.4298666
+---------------------------------------------------------------------------------------
+2460 Navarre Avenue, Oregon, OH 43616, United States of America
+SOUTH WHEELING STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Oregon', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lucas County', 'house_number': '2460', 'postcode': '43616', 'road': 'Navarre Avenue', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Oregon'}
+41.635978
+-83.4899165
+---------------------------------------------------------------------------------------
+2900 Donahoe Drive, Edgewood, Ashtabula, OH 44004, United States of America
+MAIN AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Ashtabula', '_type': 'building', 'city': 'Ashtabula', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Ashtabula County', 'hamlet': 'Edgewood', 'house_number': '2900', 'municipality': 'Ashtabula Township', 'postcode': '44004', 'road': 'Donahoe Drive', 'state': 'Ohio', 'state_code': 'OH'}
+41.880009
+-80.743979
+---------------------------------------------------------------------------------------
+701 Johnson Street, Toledo, OH 43607, United States of America
+WOODVILLE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Toledo', '_type': 'building', 'city': 'Toledo', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lucas County', 'house_number': '701', 'neighbourhood': 'ONYX', 'postcode': '43607', 'road': 'Johnson Street', 'state': 'Ohio', 'state_code': 'OH'}
+41.64733
+-83.566169
+---------------------------------------------------------------------------------------
+900 North Bever Street, Wooster, OH 44691, United States of America
+READING ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Wooster', '_type': 'building', 'city': 'Wooster', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Wayne County', 'house_number': '900', 'postcode': '44691', 'road': 'North Bever Street', 'state': 'Ohio', 'state_code': 'OH'}
+40.808706
+-81.938298
+---------------------------------------------------------------------------------------
+19681 Delaware Drive, Euclid, OH 44117, United States of America
+EUCLID AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Euclid', '_type': 'building', 'city': 'Euclid', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '19681', 'neighbourhood': 'Indian Hills', 'postcode': '44117', 'road': 'Delaware Drive', 'state': 'Ohio', 'state_code': 'OH'}
+41.557671
+-81.540849
+---------------------------------------------------------------------------------------
+2301 Warsaw Avenue, Cincinnati, OH 45204, United States of America
+WARSAW AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Cincinnati', '_type': 'building', 'city': 'Cincinnati', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Hamilton County', 'house_number': '2301', 'postcode': '45204', 'road': 'Warsaw Avenue', 'state': 'Ohio', 'state_code': 'OH', 'suburb': 'Lower Price Hill'}
+39.102939
+-84.554495
+---------------------------------------------------------------------------------------
+Saint Paul Village, Madison Road, Cincinnati, OH 45227, United States of America
+BEECHMONT AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'social', '_normalized_city': 'Cincinnati', '_type': 'social_facility', 'city': 'Cincinnati', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Hamilton County', 'neighbourhood': 'Madison-Stewart Historic District', 'postcode': '45227', 'road': 'Madison Road', 'social_facility': 'Saint Paul Village', 'state': 'Ohio', 'state_code': 'OH', 'suburb': 'Madisonville'}
+39.161023
+-84.399114
+---------------------------------------------------------------------------------------
+4401 US 23, Wakefield, Pike County, OH 45661, United States of America
+EAST MAIN STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Wakefield', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Pike County', 'hamlet': 'Wakefield', 'house_number': '4401', 'postcode': '45661', 'road': 'US 23', 'state': 'Ohio', 'state_code': 'OH'}
+39.022583
+-83.026489
+---------------------------------------------------------------------------------------
+Giant Eagle, 6300 Biddulph Road, Brooklyn, OH 44144, United States of America
+BIDDULPH ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Brooklyn', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'house_number': '6300', 'postcode': '44144', 'quarter': 'Old Brooklyn', 'road': 'Biddulph Road', 'shop': 'Giant Eagle', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Brooklyn'}
+41.4317292
+-81.7300356
+---------------------------------------------------------------------------------------
+Sunoco, Medina Road, Montville Township, OH, United States of America
+NORTH COURT STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Montville Township', '_type': 'fuel', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Medina County', 'fuel': 'Sunoco', 'municipality': 'Montville Township', 'road': 'Medina Road', 'state': 'Ohio', 'state_code': 'OH'}
+41.1359403
+-81.7910827
+---------------------------------------------------------------------------------------
+Circle K, Norton Avenue, Norton, OH 44203, United States of America
+EASTERN ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Norton', '_type': 'fuel', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Summit County', 'fuel': 'Circle K', 'postcode': '44203', 'road': 'Norton Avenue', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Norton'}
+41.0256876
+-81.637854
+---------------------------------------------------------------------------------------
+Giant Eagle, 5220 Mahoning Avenue, Youngstown, OH 44515, United States of America
+MAHONING AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Youngstown', '_type': 'shop', 'city': 'Youngstown', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Mahoning County', 'house_number': '5220', 'neighbourhood': 'Kimberly Acres', 'postcode': '44515', 'road': 'Mahoning Avenue', 'shop': 'Giant Eagle', 'state': 'Ohio', 'state_code': 'OH'}
+41.1010424
+-80.7569548
+---------------------------------------------------------------------------------------
+998 Fess Street, Zanesville, OH 43701, United States of America
+MAYSVILLE AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Zanesville', '_type': 'building', 'city': 'Zanesville', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Muskingum County', 'house_number': '998', 'postcode': '43701', 'road': 'Fess Street', 'state': 'Ohio', 'state_code': 'OH'}
+39.921787
+-82.019506
+---------------------------------------------------------------------------------------
+Convenient Food Mart, East 186th Street, Cleveland, OH 44110, United States of America
+MEMPHIS AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Cleveland', '_type': 'shop', 'city': 'Cleveland', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'postcode': '44110', 'quarter': 'South Collinwood', 'road': 'East 186th Street', 'shop': 'Convenient Food Mart', 'state': 'Ohio', 'state_code': 'OH'}
+41.572423
+-81.5494783
+---------------------------------------------------------------------------------------
+Gaslight Avenue, Oxford, OH 45056, United States of America
+TRENTON OXFORD ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Oxford', '_type': 'parking', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Butler County', 'municipality': 'Oxford Township', 'postcode': '45056', 'road': 'Gaslight Avenue', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Oxford'}
+39.507
+-84.74523
+---------------------------------------------------------------------------------------
+Lord's Fellowship Church, 160 Commerce Street, Lockbourne, Hamilton Township, OH 43137, United States of America
+SOUTH HIGH STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'place_of_worship', '_normalized_city': 'Lockbourne', '_type': 'place_of_worship', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Franklin County', 'house_number': '160', 'municipality': 'Hamilton Township', 'place_of_worship': "Lord's Fellowship Church", 'postcode': '43137', 'road': 'Commerce Street', 'state': 'Ohio', 'state_code': 'OH', 'village': 'Lockbourne'}
+39.80923
+-82.9724
+---------------------------------------------------------------------------------------
+829 Highland Avenue, Salem, OH 44460, United States of America
+SOUTH LINCOLN AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Salem', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Columbiana County', 'house_number': '829', 'postcode': '44460', 'road': 'Highland Avenue', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Salem'}
+40.908522
+-80.841335
+---------------------------------------------------------------------------------------
+5421 Charlesgate Road, Huber Heights, OH 45424, United States of America
+AIRWAY ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Huber Heights', '_type': 'building', 'city': 'Huber Heights', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Montgomery County', 'house_number': '5421', 'postcode': '45424', 'road': 'Charlesgate Road', 'state': 'Ohio', 'state_code': 'OH'}
+39.879259
+-84.140478
+---------------------------------------------------------------------------------------
+Speedway, 32760 Lorain Road, North Ridgeville, OH 44039, United States of America
+CENTER RIDGE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'North Ridgeville', '_type': 'fuel', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lorain County', 'fuel': 'Speedway', 'house_number': '32760', 'postcode': '44039', 'road': 'Lorain Road', 'state': 'Ohio', 'state_code': 'OH', 'town': 'North Ridgeville'}
+41.3831247
+-81.980064
+---------------------------------------------------------------------------------------
+99 Marathon Avenue, Fairview, Dayton, OH 45405, United States of America
+OLD TROY PIKE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Dayton', '_type': 'building', 'city': 'Dayton', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Montgomery County', 'hamlet': 'Fairview', 'house_number': '99', 'postcode': '45405', 'road': 'Marathon Avenue', 'state': 'Ohio', 'state_code': 'OH'}
+39.78187
+-84.210585
+---------------------------------------------------------------------------------------
+Tylersville Square, Meijer, 7390 Tylersville Road, West Chester Township, OH 45069, United States of America
+TYLERSVILLE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'West Chester Township', '_type': 'retail', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Butler County', 'house_number': '7390', 'municipality': 'West Chester Township', 'postcode': '45069', 'retail': 'Tylersville Square', 'road': 'Tylersville Road', 'shop': 'Meijer', 'state': 'Ohio', 'state_code': 'OH'}
+39.3573745
+-84.3760767
+---------------------------------------------------------------------------------------
+Ontario Street, Cleveland, OH 44115, United States of America
+HARVARD AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'road', '_normalized_city': 'Cleveland', '_type': 'road', 'city': 'Cleveland', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Cuyahoga County', 'neighbourhood': 'Gateway District', 'postcode': '44115', 'road': 'Ontario Street', 'road_reference': 'US 422;SR 8;SR 10;SR 14;SR 43;SR 87', 'road_type': 'primary', 'state': 'Ohio', 'state_code': 'OH'}
+41.49364
+-81.683898
+---------------------------------------------------------------------------------------
+406 Crestview Drive, Lancaster, OH 43130, United States of America
+YORK ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Lancaster', '_type': 'building', 'city': 'Lancaster', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Fairfield County', 'house_number': '406', 'municipality': 'Pleasant Township', 'postcode': '43130', 'road': 'Crestview Drive', 'state': 'Ohio', 'state_code': 'OH'}
+39.722577
+-82.559456
+---------------------------------------------------------------------------------------
+498 Buckeye Lane, Niles, OH 44446, United States of America
+VIENNA AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Niles', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Trumbull County', 'house_number': '498', 'postcode': '44446', 'road': 'Buckeye Lane', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Niles'}
+41.208441
+-80.754057
+---------------------------------------------------------------------------------------
+Escape Room USA, 459 North High Street, Columbus, OH 43215, United States of America
+EAST HUDSON STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'unknown', '_normalized_city': 'Columbus', '_type': 'escape_game', 'city': 'Columbus', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Franklin County', 'escape_game': 'Escape Room USA', 'house_number': '459', 'neighbourhood': 'Park Street District', 'postcode': '43215', 'road': 'North High Street', 'state': 'Ohio', 'state_code': 'OH'}
+39.9717389
+-83.0027423
+---------------------------------------------------------------------------------------
+I 71, Massie Township, OH 45032, United States of America
+MAPLE STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'road', '_normalized_city': 'Massie Township', '_type': 'road', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Warren County', 'municipality': 'Massie Township', 'postcode': '45032', 'road': 'I 71', 'road_reference': 'I 71', 'road_type': 'motorway', 'state': 'Ohio', 'state_code': 'OH'}
+39.458338
+-83.994462
+---------------------------------------------------------------------------------------
+Hamburg Road Southwest, Lancaster, OH 43130, United States of America
+WEST FAIR AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'road', '_normalized_city': 'Lancaster', '_type': 'road', 'city': 'Lancaster', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Fairfield County', 'municipality': 'Hocking Township', 'postcode': '43130', 'road': 'Hamburg Road Southwest', 'road_type': 'tertiary', 'state': 'Ohio', 'state_code': 'OH'}
+39.68965
+-82.609282
+---------------------------------------------------------------------------------------
+3800 Kent Road, Stow, OH 44224, United States of America
+GIBSON DRIVE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Stow', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Summit County', 'house_number': '3800', 'postcode': '44224', 'road': 'Kent Road', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Stow'}
+41.159109
+-81.424606
+---------------------------------------------------------------------------------------
+Friendsville Road, Friendsville, Westfield Township, OH 44273, United States of America
+WOOSTER PIKE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'road', '_normalized_city': 'Westfield Township', '_type': 'road', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Medina County', 'hamlet': 'Friendsville', 'municipality': 'Westfield Township', 'postcode': '44273', 'road': 'Friendsville Road', 'state': 'Ohio', 'state_code': 'OH'}
+41.044552
+-81.960694
+---------------------------------------------------------------------------------------
+MGM Northfield Park, Northfield Road, Northfield, Summit County, OH 44146, United States of America
+NORTHFIELD ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Northfield', '_type': 'casino', 'casino': 'MGM Northfield Park', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Summit County', 'postcode': '44146', 'road': 'Northfield Road', 'state': 'Ohio', 'state_code': 'OH', 'village': 'Northfield'}
+41.3485114
+-81.522595
+---------------------------------------------------------------------------------------
+539 Independence Drive, Waterville, Lucas County, OH 43566, United States of America
+MAIN STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Waterville', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lucas County', 'house_number': '539', 'postcode': '43566', 'road': 'Independence Drive', 'state': 'Ohio', 'state_code': 'OH', 'village': 'Waterville'}
+41.510487
+-83.725371
+---------------------------------------------------------------------------------------
+BP, Gateway Drive, Fairborn, OH 45324, United States of America
+NORTH BROAD STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Fairborn', '_type': 'fuel', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Greene County', 'fuel': 'BP', 'postcode': '45324', 'road': 'Gateway Drive', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Fairborn'}
+39.78238
+-84.0013687
+---------------------------------------------------------------------------------------
+4881 Old Colorado Avenue, Sheffield, Lorain County, OH 44054, United States of America
+LAKE ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Sheffield', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lorain County', 'house_number': '4881', 'postcode': '44054', 'road': 'Old Colorado Avenue', 'state': 'Ohio', 'state_code': 'OH', 'village': 'Sheffield'}
+41.463541
+-82.089769
+---------------------------------------------------------------------------------------
+Minit Mart, 500 College Street, Wadsworth, OH 44281, United States of America
+COLLEGE STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Wadsworth', '_type': 'shop', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Medina County', 'house_number': '500', 'postcode': '44281', 'road': 'College Street', 'shop': 'Minit Mart', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Wadsworth'}
+41.0257854
+-81.7442967
+---------------------------------------------------------------------------------------
+Giant Eagle, 6079 Andrews Road, Mentor-on-the-Lake, OH 44060, United States of America
+ANDREWS ROAD
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'commerce', '_normalized_city': 'Mentor-on-the-Lake', '_type': 'shop', 'city': 'Mentor-on-the-Lake', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Lake County', 'house_number': '6079', 'neighbourhood': 'Salida Beach', 'postcode': '44060', 'road': 'Andrews Road', 'shop': 'Giant Eagle', 'state': 'Ohio', 'state_code': 'OH'}
+41.7067374
+-81.3597646
+---------------------------------------------------------------------------------------
+1299 North Rangeline Road, Miami County, OH 45359, United States of America
+WEST WASHINGTON STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_type': 'building', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Miami County', 'house_number': '1299', 'postcode': '45359', 'road': 'North Rangeline Road', 'state': 'Ohio', 'state_code': 'OH'}
+40.058498
+-84.372507
+---------------------------------------------------------------------------------------
+US 50, Indian Knolls, Milford, OH 45150, United States of America
+STATE ROUTE 28
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'road', '_normalized_city': 'Milford', '_type': 'road', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Clermont County', 'hamlet': 'Indian Knolls', 'postcode': '45150', 'road': 'US 50', 'road_reference': 'US 50', 'road_type': 'primary', 'state': 'Ohio', 'state_code': 'OH', 'town': 'Milford'}
+39.172868
+-84.273788
+---------------------------------------------------------------------------------------
+Circle K, 550 West Waterloo Road, Akron, OH 44314, United States of America
+ALBRECHT AVENUE
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Akron', '_type': 'fuel', 'city': 'Akron', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Summit County', 'fuel': 'Circle K', 'house_number': '550', 'postcode': '44314', 'road': 'West Waterloo Road', 'state': 'Ohio', 'state_code': 'OH'}
+41.030279
+-81.5462848
+---------------------------------------------------------------------------------------
+Marion Municipal Airport, Innovation Drive, Claridon Township, OH 43302, United States of America
+DAVIDS STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'transportation', '_normalized_city': 'Claridon Township', '_type': 'aeroway', 'aeroway': 'Marion Municipal Airport', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Marion County', 'municipality': 'Claridon Township', 'postcode': '43302', 'road': 'Innovation Drive', 'state': 'Ohio', 'state_code': 'OH'}
+40.616604
+-83.069296
+---------------------------------------------------------------------------------------
+1898 Aggie Court, Columbus, OH 43223, United States of America
+WEST BROAD STREET
+{'ISO_3166-1_alpha-2': 'US', 'ISO_3166-1_alpha-3': 'USA', 'ISO_3166-2': ['US-OH'], '_category': 'building', '_normalized_city': 'Columbus', '_type': 'building', 'city': 'Columbus', 'continent': 'North America', 'country': 'United States', 'country_code': 'us', 'county': 'Franklin County', 'house_number': '1898', 'postcode': '43223', 'quarter': 'Hilltop', 'road': 'Aggie Court', 'state': 'Ohio', 'state_code': 'OH'}
+39.916664
+-83.086064
+---------------------------------------------------------------------------------------

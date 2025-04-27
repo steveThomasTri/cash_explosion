@@ -162,7 +162,7 @@ let USDollar = new Intl.NumberFormat('en-US', {
         const key = datasets[currentDatasetIndex];
         tooltip
         .style("opacity", 1)
-        .html(`<strong>County ID:</strong> ${d.number}<br><strong>${key} ${d[key]}</strong>`);
+        .html(`<strong>${key} ${d[key]}</strong>`);
         
         d3.select(this)
         .attr("stroke", "#333")

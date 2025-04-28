@@ -73,6 +73,30 @@ Now that you understand my motivation and how the game is played.  The project i
     - filename: index.html
     - There are 4 sections for gathering the data to put in the database
         1. Player Info
+            - The inputs you will need are name, city, ticket purchased store, name of the road, and the city where it was purchased.
+            - Verification is if the input boxes are not empty.
+            -  There are two buttons, one to confirm your inputs and disable them once confirmed.
+            - The other button is the Get Name the information by taking a snapshot of the area shown below
+            ![Tesseract Area](images/tesseractexample.png)
+            - The file is extractorimagetextcopy.py.  It goes through a Flask app and it will attempt to get and fill out the information of what was on screen at the time.
+            - You will have to edit out some of the garbage that it snaps.  
+            - You must import PIL, pytesseract, and pyautogui to use the Get Name button.
         2. Nummbers
+            - Putting three numbers in from 1-24.  There is validation for HTML5 and JavaScript.
         3. Score / Bonus
+            - Each turn cooresponds to the order they picked the number.
+            - For each number, you can choose if a special square was revealed and the dollar amount from the dropdown
+            - Special Squares
+                - 2x (Doubles the amount)
+                - 3x (Triples the amount)
+                - Bonus (from $10000 to $50000)
+                - Ticket Jackpot
+                - Extra Play (Player gets to pick another number)
         4. Verification
+            - Has the Player name, city, the amount they won
+            - The amount they won should confirm what the hosts and gameplay say
+            - Hit the Verify button to refresh for the next player.
+            - localStorage variable player# keeps a running count of the player number.  If player# reaches 9, we will proceed to the next screen, the endgame
+4. Endgame.html (Where all 8 players have played their game)
+- Players game totals are ordered from most to least.  The top two players will have their totals doubled and will proceed to the cash challenge
+- The after double section is revealed with the top two scorers.

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from extractorimagetextcopy import extractor
+from textextractor import extractor
 from database import insert_player, get_endgame, update_endgame_results, verify2, totalwinnings, cities, county, weekdata, numbers
 
 app = Flask(__name__)

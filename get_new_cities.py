@@ -43,34 +43,34 @@ def findnewcities():
             try:
                 location = geolocator.geocode(f"{city[0]}, Ohio", timeout=10)
                 if location:
-                    print(f"{city[0]} → {location.latitude}, {location.longitude}")
-                    print(f"{location.raw}")
+                    #print(f"{city[0]} → {location.latitude}, {location.longitude}")
+                    #print(f"{location.raw}")
                     county = location.raw["display_name"].split(", ")
                     for c in county:
                         if (c.find("County") != -1):
-                            print(c)
+                            #print(c)
                             sql = "INSERT INTO cities (city, lon, lat, county) VALUES (%s, %s, %s, %s)"
                             data = (city[0],location.longitude, location.latitude, c,)
                             mycursor.execute(sql, data)
                             mydb.commit()
                             break
                 else:
-                    print(f"{city[0]} not found. trying alternate approach")
+                    #print(f"{city[0]} not found. trying alternate approach")
                     location = geolocator.geocode(city[0], timeout=10)
                     if location:
-                        print(f"{city[0]} → {location.latitude}, {location.longitude}")
-                        print(f"{location.raw}")
+                        #print(f"{city[0]} → {location.latitude}, {location.longitude}")
+                        #print(f"{location.raw}")
                         county = location.raw["display_name"].split(", ")
                         for c in county:
                             if (c.find("County") != -1):
-                                print(c)
+                                #print(c)
                                 sql = "INSERT INTO cities (city, lon, lat, county) VALUES (%s, %s, %s, %s)"
                                 data = (city[0],location.longitude, location.latitude, c,)
                                 mycursor.execute(sql, data)
                                 mydb.commit()
                                 break
             except GeocoderTimedOut:
-                print(f"Timeout for {city[0]}, retrying...")
+                #print(f"Timeout for {city[0]}, retrying...")
                 time.sleep(2)
                 continue
             time.sleep(1)
@@ -83,7 +83,7 @@ def insertcity():
     sql = f"SELECT county from cities where code is null"
     mycursor.execute(sql)
     myresult = mycursor.fetchall()
-    print(myresult)
+    #print(myresult)
 
     # Open and read the JSON file
     with open('county.json', 'r') as file:

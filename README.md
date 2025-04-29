@@ -134,3 +134,11 @@ pip install -r ./requirements.txt
 python app.py
 ```
 Now you are ready to run the app!
+
+## Files after workflow
+
+- get_new_cities.py
+    - This python file will check for new cities and will add them to the cities table
+    - It also uses the county.json file to get the county code from the name of the county.
+- findaddress.py
+    - This python file gets the businesses address by the coordinates and the city listed.

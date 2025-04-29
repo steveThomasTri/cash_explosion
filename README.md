@@ -98,5 +98,39 @@ Now that you understand my motivation and how the game is played.  The project i
             - Hit the Verify button to refresh for the next player.
             - localStorage variable player# keeps a running count of the player number.  If player# reaches 9, we will proceed to the next screen, the endgame
 4. Endgame.html (Where all 8 players have played their game)
-- Players game totals are ordered from most to least.  The top two players will have their totals doubled and will proceed to the cash challenge
-- The after double section is revealed with the top two scorers.
+    - Players game totals are ordered from most to least.  The top two players will have their totals doubled and will proceed to the cash challenge
+    - The after double section is revealed with the top two scorers.
+    - Then you choose the second chance winner
+    - Finally, you choose the champion to confirm.
+    - All of the players are shown.  Cash Challenge contestants, second chance and that week's champion to be confirmed.
+    - Once confirmed, we go to the page endgameresults.html
+        - This is where the total winnings for that week are displayed.
+        - Once you approve this, all of the localStorsage variables are removed and you will be taken back to the splash screen.
+
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://d3js.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/d3js/d3js-original.svg" alt="d3js" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
+
+## Getting Started
+
+In order for this app to work you must do the steps below
+
+1. Use git clone to clone this repo
+```
+git clone https://github.com/steveThomasTri/cash_explosion.git
+```
+2. Use the requirements.txt and install
+```
+pip install -r ./requirements.txt
+```
+3. create a .env file for the following variables
+    - HOST
+    - USER
+    - PASSWORD
+    - OPENCAGEAPIKEY (this is an API that gets the coordinates of a business)
+4. There are 4 sql scripts to import to MySQL,  found in SQL Scripts folder
+    - The files are current as of 4/26/25
+5. Run the flask app
+```
+python app.py
+```
+Now you are ready to run the app!

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 from textextractor import extractor
-from database import insert_player, get_endgame, update_endgame_results, verify2, totalwinnings, cities, county, weekdata, numbers
+from database import insert_player, get_endgame, update_endgame_results, verify2, totalwinnings, cities, county, weekdata, numbers, get_last_champion
 
 app = Flask(__name__)
 
@@ -54,6 +54,16 @@ def insert_data():
 def end_game_data():
     data = request.json
     return jsonify(players = get_endgame(data))
+
+@app.route('/lastchampion', methods=['GET'])
+def lastchampion():
+    result = get_last_champion()
+    if result:
+        return jsonify(name=result[0], city=result[1])
+    else:
+        # No champion crowned yet (e.g. very first show) — frontend
+        # falls back to "No Returning Champion" when name is null.
+        return jsonify(name=None, city=None)
 
 @app.route("/endgameresults", methods=["POST"])
 def end_game_results():

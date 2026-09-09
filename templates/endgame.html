@@ -5,14 +5,194 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 
-        <title>Form with Sections</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <title>Cash Explosion End Game</title>
         <style>
-            .hidden { display: none; }
+            :root{
+                --ce-green:#0b5d3b;
+                --ce-green-dark:#08442a;
+                --ce-gold:#e8b62f;
+                --ce-gold-dark:#c99a1f;
+                --ce-bg:#f4f6f5;
+                --ce-card:#ffffff;
+                --ce-text:#1c2b24;
+                --ce-muted:#6b7c74;
+            }
+            .hidden { display: none !important; }
+            body{
+                background:var(--ce-bg);
+                color:var(--ce-text);
+                font-family: "Segoe UI", Roboto, system-ui, sans-serif;
+            }
+            .page-header{
+                background:linear-gradient(135deg, var(--ce-green) 0%, var(--ce-green-dark) 100%);
+                color:#fff;
+                padding:1.25rem 1.5rem;
+                border-radius:12px;
+                margin:1.5rem 0 1.25rem;
+                box-shadow:0 4px 14px rgba(11,93,59,0.25);
+            }
+            .page-header h1{
+                font-size:1.4rem;
+                font-weight:700;
+                margin:0;
+            }
+            .page-header small{ opacity:.85; }
+
+            .step-tracker{
+                display:flex;
+                gap:.5rem;
+                margin-bottom:1.5rem;
+            }
+            .step-pill{
+                flex:1;
+                text-align:center;
+                padding:.55rem .5rem;
+                border-radius:8px;
+                background:#e3e8e5;
+                color:var(--ce-muted);
+                font-size:.8rem;
+                font-weight:600;
+                letter-spacing:.02em;
+                transition:all .25s ease;
+            }
+            .step-pill.active{
+                background:var(--ce-gold);
+                color:var(--ce-green-dark);
+                box-shadow:0 2px 8px rgba(232,182,47,.5);
+            }
+            .step-pill.done{
+                background:var(--ce-green);
+                color:#fff;
+            }
+
+            .card-section{
+                background:var(--ce-card);
+                border-radius:12px;
+                padding:1rem;
+                margin-bottom:1.5rem;
+                box-shadow:0 2px 10px rgba(0,0,0,.06);
+                border:1px solid #e7ebe9;
+            }
+            .list-group-item.active.text-center{
+                background:var(--ce-green) !important;
+                border-color:var(--ce-green) !important;
+                color:#fff !important;
+                font-weight:700;
+                letter-spacing:.03em;
+                text-transform:uppercase;
+                font-size:.85rem;
+                border-radius:8px 8px 0 0 !important;
+            }
+            .list-group-item{
+                border:1px solid #e7ebe9 !important;
+                transition:all .15s ease;
+            }
+            .list-group-item:not(.active):hover{
+                background:#f5f8f6;
+            }
+            .list-group-item.row-selected{
+                background:var(--ce-gold) !important;
+                border-color:var(--ce-gold-dark) !important;
+                color:var(--ce-green-dark);
+                font-weight:700;
+            }
+
+            /* Player identity colors, consistent across After Double / Second Chance / Cash Challenge */
+            :root{
+                --color-gold:#e8b62f;
+                --color-gold-dark:#c99a1f;
+                --color-red:#c0392b;
+                --color-red-dark:#8e2b20;
+                --color-purple:#6c3fa0;
+                --color-purple-dark:#4e2d76;
+                --color-green:#1e8449;
+                --color-green-dark:#146336;
+            }
+            .list-group-item.identity-gold{
+                background:var(--color-gold) !important;
+                border-color:var(--color-gold-dark) !important;
+                color:var(--ce-green-dark) !important;
+                font-weight:700;
+            }
+            .list-group-item.identity-red{
+                background:var(--color-red) !important;
+                border-color:var(--color-red-dark) !important;
+                color:#fff !important;
+                font-weight:700;
+            }
+            .list-group-item.identity-purple{
+                background:var(--color-purple) !important;
+                border-color:var(--color-purple-dark) !important;
+                color:#fff !important;
+                font-weight:700;
+            }
+            .list-group-item.identity-green{
+                background:var(--color-green) !important;
+                border-color:var(--color-green-dark) !important;
+                color:#fff !important;
+                font-weight:700;
+            }
+            /* Ring indicator for picking the Cash Challenge winner without hiding identity color */
+            .list-group-item.pick-ring{
+                box-shadow: inset 0 0 0 4px #1c2b24;
+            }
+            .pick-ring .pick-check{
+                margin-left:.4rem;
+            }
+            .btn-ce-primary{
+                background:var(--ce-green);
+                border-color:var(--ce-green);
+                color:#fff;
+                font-weight:600;
+            }
+            .btn-ce-primary:hover{ background:var(--ce-green-dark); color:#fff; }
+            .btn-ce-primary:disabled{ background:#9fb3ab; border-color:#9fb3ab; }
+
+            #endGameResults{
+                background:linear-gradient(135deg, var(--ce-gold) 0%, var(--ce-gold-dark) 100%) !important;
+                border-radius:12px;
+                text-align:center;
+                padding:2rem 1rem;
+                box-shadow:0 6px 20px rgba(0,0,0,.15);
+            }
+            #endGameResults h1, #endGameResults h2{
+                color:var(--ce-green-dark);
+                font-weight:800;
+            }
+            .result-line{
+                padding:.75rem 1.1rem;
+                border-radius:8px;
+                margin-bottom:.6rem;
+                font-size:1.1rem;
+                text-align:left;
+            }
+            .result-line.winner-highlight{
+                box-shadow: inset 0 0 0 4px #1c2b24, 0 2px 8px rgba(0,0,0,.25);
+            }
+            .result-line .winner-tag{
+                float:right;
+                font-size:.85rem;
+                letter-spacing:.04em;
+            }
         </style>
     </head>
 <body>
     <div class="container">
-        <div class="list-group">
+        <div class="page-header">
+            <h1><i class="bi bi-trophy-fill"></i> Cash Explosion End Game</h1>
+            <small>Doubles, Second Chance, and the Cash Challenge</small>
+        </div>
+
+        <div class="step-tracker" id="stepTracker">
+            <div class="step-pill active" data-step="1">1. Results</div>
+            <div class="step-pill" data-step="2">2. After Double</div>
+            <div class="step-pill" data-step="3">3. Second Chance</div>
+            <div class="step-pill" data-step="4">4. Cash Challenge</div>
+            <div class="step-pill" data-step="5">5. Winner</div>
+        </div>
+
+        <div class="list-group card-section">
             <button type="button" class="list-group-item list-group-item-action active text-center">
               Results
             </button>
@@ -73,18 +253,18 @@
                 </div>
             </button>
         </div>
-        <div class="list-group hidden">
+        <div class="list-group hidden card-section">
             <button type="button" class="list-group-item list-group-item-action active text-center">
-                After Double
+                <i class="bi bi-lightning-charge-fill"></i> After Double
               </button>
-              <button type="button" class="list-group-item list-group-item-action">
+              <button type="button" class="list-group-item list-group-item-action identity-red">
                 <div class="row">
                     <div class="col-4">1</div>
                     <div class="col-4 playerNameAfterDouble">1</div>
                     <div class="col-4 gameTotalAfterDouble">1</div>
                 </div>
             </button>
-            <button type="button" class="list-group-item list-group-item-action">
+            <button type="button" class="list-group-item list-group-item-action identity-purple">
                 <div class="row">
                     <div class="col-4">2</div>
                     <div class="col-4 playerNameAfterDouble">1</div>
@@ -92,9 +272,9 @@
                 </div>
             </button>
         </div>
-        <div class="list-group hidden">
+        <div class="list-group hidden card-section">
             <button type="button" class="list-group-item list-group-item-action active text-center">
-                Second Chance
+                <i class="bi bi-arrow-repeat"></i> Second Chance &mdash; pick one
               </button>
               <button type="button" class="list-group-item list-group-item-action">
                 <div class="row">
@@ -151,29 +331,20 @@
                 </div>
             </button>
         </div>
-        <div class="list-group hidden">
+        <div class="list-group hidden card-section">
             <button type="button" class="list-group-item list-group-item-action active text-center">
-                Cash Challenge
+                <i class="bi bi-cash-stack"></i> Cash Challenge &mdash; pick the winner
               </button>
-              <button type="button" class="list-group-item list-group-item-action">
+              <button type="button" class="list-group-item list-group-item-action identity-gold">
                 <div class="row">
                     <div class="col-4">1</div>
-                    <div class="col-4 cashChallengeName">*Champion*</div>
+                    <div class="col-4 cashChallengeName">Gary Scanlon (Byesville)</div>
                     <div class="col-4 ">
                         <input type="radio" name="cashchallenge" class="custom-control-input cashChallengeSelector" value="">
                     </div>
                 </div>
             </button>
-            <button type="button" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-4">1</div>
-                    <div class="col-4 cashChallengeName">Champion</div>
-                    <div class="col-4 ">
-                        <input type="radio" name="cashchallenge" class="custom-control-input cashChallengeSelector" value="">
-                    </div>
-                </div>
-            </button>
-            <button type="button" class="list-group-item list-group-item-action">
+            <button type="button" class="list-group-item list-group-item-action identity-red">
                 <div class="row">
                     <div class="col-4">1</div>
                     <div class="col-4 cashChallengeName">Champion</div>
@@ -182,7 +353,16 @@
                     </div>
                 </div>
             </button>
-            <button type="button" class="list-group-item list-group-item-action">
+            <button type="button" class="list-group-item list-group-item-action identity-purple">
+                <div class="row">
+                    <div class="col-4">1</div>
+                    <div class="col-4 cashChallengeName">Champion</div>
+                    <div class="col-4 ">
+                        <input type="radio" name="cashchallenge" class="custom-control-input cashChallengeSelector" value="">
+                    </div>
+                </div>
+            </button>
+            <button type="button" class="list-group-item list-group-item-action identity-green">
                 <div class="row">
                     <div class="col-4">1</div>
                     <div class="col-4 cashChallengeName"></div>
@@ -192,26 +372,80 @@
                 </div>
             </button>
         </div>
-        <button type="button" class="btn btn-primary btn-lg btn-block" id="EGButton">Block level button</button>
-        <div class="jumbotron hidden" style="background: greenyellow" id="endGameResults">
-            <h1 class="display-4 endGameResults2" id=""></h1>
-            <h1 class="display-4 endGameResults2" id=""></h1>
-            <h1 class="display-4 endGameResults2" id=""></h1>
+        <button type="button" class="btn btn-ce-primary btn-lg btn-block" id="EGButton">Continue</button>
+        <div class="jumbotron hidden mt-3" id="endGameResults">
+            <h2 class="mb-3"><i class="bi bi-trophy-fill"></i> Final Results</h2>
+            <div class="result-line identity-red" id="resultLine1"></div>
+            <div class="result-line identity-purple" id="resultLine2"></div>
+            <div class="result-line identity-green" id="resultLine3"></div>
+            <div class="result-line identity-gold" id="resultLine4"></div>
         </div>
-        <button type="button" class="btn btn-primary btn-lg btn-block hidden" id="submitChanges" disabled>Approve</button>
+        <button type="button" class="btn btn-ce-primary btn-lg btn-block hidden mt-2" id="submitChanges" disabled>Approve</button>
+        <a href="/endgameresult">END GAME</a>
     </div>
     
     <script src="{{url_for('static', filename='controller.js')}}"></script>
     <script>
+        // Update this each time a new champion is crowned, or reset to "" between champions.
+        var RETURNING_CHAMPION_NAME = "";
+
+        function setActiveStep(n){
+            document.querySelectorAll('.step-pill').forEach(function(pill){
+                var s = parseInt(pill.dataset.step);
+                pill.classList.remove('active','done');
+                if (s < n) pill.classList.add('done');
+                if (s === n) pill.classList.add('active');
+            });
+        }
+
+        function enableRowSelect(radioName, mode){
+            var radios = document.getElementsByName(radioName);
+            Array.from(radios).forEach(function(radio){
+                var row = radio.closest('.list-group-item');
+                row.addEventListener('click', function(e){
+                    if (radio.disabled) return;
+                    radio.checked = true;
+                    Array.from(radios).forEach(function(r){
+                        var rRow = r.closest('.list-group-item');
+                        if (mode === 'identity-green'){
+                            rRow.classList.toggle('identity-green', r.checked);
+                        } else if (mode === 'pick-ring'){
+                            rRow.classList.toggle('pick-ring', r.checked);
+                            var existingCheck = rRow.querySelector('.pick-check');
+                            if (r.checked && !existingCheck){
+                                var icon = document.createElement('i');
+                                icon.className = 'bi bi-check-circle-fill pick-check';
+                                rRow.querySelector('.col-4:last-child').appendChild(icon);
+                            } else if (!r.checked && existingCheck){
+                                existingCheck.remove();
+                            }
+                        } else {
+                            rRow.classList.toggle('row-selected', r.checked);
+                        }
+                    });
+                });
+            });
+        }
+
         var globaldata;
         var endGameObj = {"isCashChallenge":[],"isSecondChance":'',"isChampion":""}
-        fetch("/endgamedata", {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'}, 
-            body: JSON.stringify({"date" : localStorage.getItem("date")})
-        })
-        .then(response => response.json())
-        .then(data => {
+        // Fetch the actual returning champion AND the endgame leaderboard data
+        // together, then populate the page once both are back.
+        Promise.all([
+            fetch("/lastchampion").then(function(r){ return r.json(); }),
+            fetch("/endgamedata", {
+                method: "POST",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({"date" : localStorage.getItem("date")})
+            }).then(function(r){ return r.json(); })
+        ]).then(function(results){
+            var championData = results[0];
+            var data = results[1];
+
+            RETURNING_CHAMPION_NAME = championData.name
+                ? championData.name + " (" + championData.city + ")"
+                : "No Returning Champion";
+
             globaldata = data
             Array.from(document.getElementsByClassName("playerNameLeaderboard")).forEach(
                 function(element, index, array) {
@@ -241,6 +475,10 @@
             document.getElementsByClassName("cashChallengeName")[2].textContent = data["players"][1][2]
             document.getElementsByClassName("cashChallengeSelector")[1].value = data["players"][0][2]
             document.getElementsByClassName("cashChallengeSelector")[2].value = data["players"][1][2]
+
+            enableRowSelect("secondchance", "identity-green");
+            enableRowSelect("cashchallenge", "pick-ring");
+            document.getElementsByClassName("cashChallengeName")[0].textContent = RETURNING_CHAMPION_NAME;
         });
 
         var clicks = 0
@@ -248,10 +486,12 @@
             if (clicks == 0){
                 document.getElementsByClassName("hidden")[clicks].classList.remove("hidden")
                 clicks++
+                setActiveStep(2);
             }
             else if (clicks == 1){
                 document.getElementsByClassName("hidden")[clicks - 1].classList.remove("hidden")
                 clicks++
+                setActiveStep(3);
             }
             else if (clicks == 2){
                 var secondchance = document.getElementsByName("secondchance")
@@ -271,6 +511,9 @@
                     document.getElementsByClassName("cashChallengeName")[3].textContent = specialEventValue
                     document.getElementsByClassName("cashChallengeSelector")[3].value = specialEventValue
                     clicks++
+                    setActiveStep(4);
+                } else {
+                    alert("Pick a Second Chance player before continuing.");
                 }
             }
             else if (clicks == 3){
@@ -291,21 +534,45 @@
                     for (let i = 0; i<listgroups.length; i++){
                         listgroups[i].classList.add("hidden")
                     }
+
+                    var player1 = endGameObj["isCashChallenge"][0];
+                    var player2 = endGameObj["isCashChallenge"][1];
+                    var scPlayer = endGameObj["isSecondChance"];
+                    var championLabel = (ccvalue === "") ? RETURNING_CHAMPION_NAME + " (Returning Champion)" : ccvalue;
+
+                    var line1 = document.getElementById("resultLine1");
+                    var line2 = document.getElementById("resultLine2");
+                    var line3 = document.getElementById("resultLine3");
+                    var line4 = document.getElementById("resultLine4");
+
+                    line1.innerHTML = '<i class="bi bi-suit-diamond-fill"></i> Cash Challenge: <strong>' + player1 + '</strong>';
+                    line2.innerHTML = '<i class="bi bi-suit-diamond-fill"></i> Cash Challenge: <strong>' + player2 + '</strong>';
+                    line3.innerHTML = '<i class="bi bi-arrow-repeat"></i> Second Chance: <strong>' + scPlayer + '</strong>';
+                    line4.innerHTML = '<i class="bi bi-trophy-fill"></i> Champion: <strong>' + championLabel + '</strong>';
+
+                    // Highlight whichever line the emcee actually picked as the winner
+                    [line1, line2, line3].forEach(function(l){ l.classList.remove('winner-highlight'); });
+                    if (ccvalue === player1) line1.innerHTML += '<span class="winner-tag">🏆 WINNER</span>', line1.classList.add('winner-highlight');
+                    else if (ccvalue === player2) line2.innerHTML += '<span class="winner-tag">🏆 WINNER</span>', line2.classList.add('winner-highlight');
+                    else if (ccvalue === scPlayer) line3.innerHTML += '<span class="winner-tag">🏆 WINNER</span>', line3.classList.add('winner-highlight');
+
                     //show jumbotron
                     document.getElementById("endGameResults").classList.remove("hidden")
-                    document.getElementsByClassName("endGameResults2")[0].textContent = "Cash Challenge "+endGameObj["isCashChallenge"]
-                    document.getElementsByClassName("endGameResults2")[1].textContent = "Second Chance "+endGameObj["isSecondChance"]
-                    document.getElementsByClassName("endGameResults2")[2].textContent = "Champion "+endGameObj["isChampion"]
                     //show and enable button
                     document.getElementById("submitChanges").classList.remove("hidden")
                     document.getElementById("submitChanges").disabled = false
+                    document.getElementById("EGButton").classList.add("hidden")
+                    setActiveStep(5);
                     clicks++
+                } else {
+                    alert("Pick the Cash Challenge winner before continuing.");
                 }
             }
         });
 
         document.getElementById("submitChanges").addEventListener('click', function() {
-            this.disabled = true;
+            var btn = this;
+            btn.disabled = true;
             endGameObj["date"] = localStorage.getItem("date")
             fetch("/endgameresults", {
                 method: "POST",
@@ -315,6 +582,11 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data)
+                btn.textContent = "Submitted ✓ — redirecting in 5s...";
+
+                setTimeout(function(){
+                    window.location.replace("/endgameresult");
+                }, 5000);
             });
         })
         

@@ -15,7 +15,7 @@ import time
 import requests
 
 #API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY", "YOUR_API_KEY")
-API_KEY = "AIzaSyD6KuEPBNz90RkwjkuU66sX5rtRDzIBW8M"
+API_KEY = ""
 
 INPUT_CSV = "player.csv"
 OUTPUT_CSV = "player_with_coordinates2.csv"

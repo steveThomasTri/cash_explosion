@@ -28,7 +28,6 @@ def findnewcities():
     sql = f"SELECT DISTINCT playerCity from players UNION SELECT DISTINCT ticketPurchasedCity from players"
     mycursor.execute(sql)
     myresult = mycursor.fetchall()
-    print(myresult)
 
     sql = "SELECT city from cities"
     mycursor.execute(sql)

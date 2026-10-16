@@ -383,28 +383,44 @@ def weekdata():
   mycursor = conn.cursor()
   try:
     sql = """
-    select date, 
-    sum(bonus) + 
-    sum(
-      (case
-        when isChampion = 1 then (
-          case
-            when gameTotal + gameTotal >= 40000 then 75000
-                    else 50000
-                end
+    WITH weekly_totals AS (
+    SELECT 
+        date,
+        SUM(bonus) AS bonus_sum,
+        SUM(
+            CASE
+                WHEN isChampion = 1 THEN (
+                    CASE WHEN gameTotal + gameTotal >= 40000 THEN 75000 ELSE 50000 END
                 )
-        when (isChampion = 0 and isSecondChance = 1) then gameTotal + 5000
-            when (isChampion = 0 and isCashChallenge = 1) then gameTotal + gameTotal
-        else gameTotal
-      end)
-    ) +
-    (
-    case
-      when sum(isChampion) = 0 then 50000
-      else 0
-    end
-    ) as GT
-    from players group by date;  
+                WHEN (isChampion = 0 AND isSecondChance = 1) THEN gameTotal + 5000
+                WHEN (isChampion = 0 AND isCashChallenge = 1) THEN gameTotal + gameTotal
+                ELSE gameTotal
+            END
+        ) AS game_sum,
+        SUM(isChampion) AS champCount
+    FROM players
+    GROUP BY date
+    ),
+    jackpot AS (
+        SELECT date, bonus_sum, game_sum, champCount,
+              CASE WHEN champCount = 0 THEN 50000 ELSE 0 END AS base_jackpot
+        FROM weekly_totals
+    ),
+    jackpot_calc AS (
+        SELECT date, bonus_sum, game_sum, champCount, base_jackpot,
+              LAG(base_jackpot) OVER (ORDER BY date) AS prev_jackpot
+        FROM jackpot
+    )
+    SELECT
+        date,
+        bonus_sum + game_sum +
+        CASE
+            WHEN champCount != 0 THEN 0
+            WHEN prev_jackpot > 0 THEN 100000
+            ELSE 50000
+        END AS GT
+    FROM jackpot_calc
+    ORDER BY date;
     """
     mycursor.execute(sql)
     myresult = mycursor.fetchall()
